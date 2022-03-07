@@ -16,6 +16,23 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+
+            $table->string('gender');
+            $table->string('city');
+            $table->string('barangay');
+            $table->string('permanent_address');
+            $table->string('present_address');
+            $table->string('phone_number');
+
+
+            $table->string('avatar')->nullable();
+            $table->string('vaccination_card')->nullable();
+
+            $table->decimal('latitude', 10, 8 );
+            $table->decimal('longitude', 11, 8 );
+
+
+            
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

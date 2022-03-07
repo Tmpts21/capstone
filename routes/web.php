@@ -3,7 +3,13 @@
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\MapController;
+use App\Http\Controllers\DailyHealthCheckController;
 
+
+ 
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,8 +30,21 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('health_check', [DailyHealthCheckController::class, 'index'])->middleware(['auth', 'verified'])->name('health_check');
+
+
+Route::get('/map', [MapController::class, 'index'])->middleware(['auth', 'verified'])->name('map');
+
+ Route::get('/dataprivacy', function () {
+     return Inertia::render('DataPrivacy');
+ });
+
+ Route::get('/profile', [ProfileController::class, 'index'])->middleware(['auth', 'verified'])->name('profile');
+
+ Route::post('/update/profile', [ProfileController::class, 'update'])->middleware(['auth','verified'])->name('update');
+
+
 
 require __DIR__.'/auth.php';
