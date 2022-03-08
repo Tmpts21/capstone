@@ -32,7 +32,6 @@ Route::get('/', function () {
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('health_check', [DailyHealthCheckController::class, 'index'])->middleware(['auth', 'verified'])->name('health_check');
 
 
 Route::get('/map', [MapController::class, 'index'])->middleware(['auth', 'verified'])->name('map');
@@ -45,6 +44,21 @@ Route::get('/map', [MapController::class, 'index'])->middleware(['auth', 'verifi
 
  Route::post('/update/profile', [ProfileController::class, 'update'])->middleware(['auth','verified'])->name('update');
 
+ Route::post('/add_tracing_log', [ProfileController::class, 'addTracingLog'])->middleware(['auth','verified'])->name('add_tracing_log');
 
 
+
+
+ Route::get('/student_reports', [DashboardController::class, 'studentReports'])->middleware(['auth', 'verified'])->name('student_reports');
+
+
+
+
+ Route::get('health_check', [DailyHealthCheckController::class, 'index'])->middleware(['auth', 'verified'])->name('health_check');
+
+ Route::post('check_health_form', [DailyHealthCheckController::class, 'checkHealthForm'])->middleware(['auth', 'verified'])->name('check_health');
+
+ Route::get('health_status', [DailyHealthCheckController::class, 'healthStatus'])->middleware(['auth', 'verified'])->name('healthStatus');
+
+ 
 require __DIR__.'/auth.php';

@@ -11,6 +11,8 @@ import { Head } from '@inertiajs/inertia-vue3';
             <h1 class="font-semibold text-3xl text-gray-800 leading-tight">
                         St.Paul Covid Bulletin 
             </h1>
+
+            
         </template>
            
 

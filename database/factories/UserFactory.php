@@ -37,10 +37,9 @@ class UserFactory extends Factory
         'Ulingao',
         'Sapang Pahalang'];
 
-
-        $coordinates = [
+      $coordinates = [
             [15.026340,121.118430],
-            [15.045960,121.316850],
+            [15.0024 ,121.0134],
             [14.9955, 120.9905],
             [15.0093 ,120.9676],
             [14.9911 , 120.9159 ],
@@ -56,9 +55,7 @@ class UserFactory extends Factory
             [14.9964,121.0536],
             [14.9796,120.9145],
             [14.9938,121.0364],
-
-
-        ];
+      ];
 
 
         $b = rand(1 , count($barangays)) - 1 ;

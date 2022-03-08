@@ -73,7 +73,7 @@ class RegisteredUserController extends Controller
 
         $coordinates = [
             [15.026340,121.118430],
-            [15.045960,121.316850],
+            [15.0024 ,121.0134],
             [14.9955, 120.9905],
             [15.0093 ,120.9676],
             [14.9911 , 120.9159 ],
@@ -115,7 +115,7 @@ class RegisteredUserController extends Controller
 
         
 
-        if ($request->hasFile('vaccination_card')) { 
+        if ($request->hasFile('avatar')) { 
             $avatar = $request->file('avatar')->store('profiles' , 's3');
             $user->avatar = $avatar;
         }

@@ -31,8 +31,11 @@ return new class extends Migration
             $table->decimal('latitude', 10, 8 );
             $table->decimal('longitude', 11, 8 );
 
+            $table->string('status')->default('normal');
+            $table->string('role')->default('student');
 
-            
+            $table->string('tracing_log')->nullable();
+
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

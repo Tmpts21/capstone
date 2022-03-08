@@ -41,8 +41,8 @@ class ProfileController extends Controller
             'present_address' => 'string|max:255',
             'permanent_address' => 'string|max:255',
             'phone_number' => 'string|max:11',
+           
         ]);
-
         $user = User::find(Auth::user()->id); 
 
         $user->name = $request->name;
@@ -76,6 +76,25 @@ class ProfileController extends Controller
 
         return redirect('profile')->with('message','Successfully Updated');
 
+
+    }
+
+    public function addTracingLog(Request $request) { 
+
+        $validated = $request->validate([
+            'tracing_log' => 'mimes:pdf'
+        ]);
+
+        $user = User::findorfail(Auth::user()->id) ;
+        if ($request->hasFile('tracing_log')) { 
+            $path = $request->file('tracing_log')->store('tracing_log' , 's3');
+            $user->tracing_log = $path ;
+        }
+        
+
+        $user->save();
+
+        return redirect('health_status')->with('message','Successfully Updated');
 
     }
 }
