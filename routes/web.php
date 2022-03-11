@@ -54,6 +54,8 @@ Route::get('/map', [MapController::class, 'index'])->middleware(['auth', 'verifi
 
 
 
+ Route::get('/student/{id} ', [DashboardController::class, 'show'])->middleware(['auth', 'verified'])->name('student');
+
  Route::get('health_check', [DailyHealthCheckController::class, 'index'])->middleware(['auth', 'verified'])->name('health_check');
 
  Route::post('check_health_form', [DailyHealthCheckController::class, 'checkHealthForm'])->middleware(['auth', 'verified'])->name('check_health');

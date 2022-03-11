@@ -89,8 +89,6 @@ class RegisteredUserController extends Controller
             [14.9964,121.0536],
             [14.9796,120.9145],
             [14.9938,121.0364],
-
-
         ];
 
 
