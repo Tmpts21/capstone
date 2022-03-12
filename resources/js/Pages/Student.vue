@@ -7,8 +7,12 @@
           
 
                     <div class="flex flex-col sm:justify-center items-center pt-6 sm:pt-0 ">
-                        <a v-if="statuses.includes(student.status)" href="#" class="ml-5 bg-red-800 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full" :href="vax_image" target="_blank" alt=""> View Contigency report </a>
-                        <div v-else-if="student.status == 'normal' " class="ml-5 bg-green-800 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full" :href="vax_image" target="_blank" alt=""> Student is in Healthy Condition <i class="fa-solid fa-face-smile"></i>  </div>
+                        
+                   
+                        <Link v-if="statuses.includes(student.status)" :href="route('contingency_report' , {id : student.id })" class="bg-red-800 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full" v-html="'View Student Report'"
+                        />
+
+                        <div v-else-if="student.status == 'normal' " class="ml-5 bg-green-800 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full" target="_blank" alt=""> Student is in Healthy Condition <i class="fa-solid fa-face-smile"></i>  </div>
 
                         <br>
                         <img v-if="avatar" class="inline-block h-24 w-24 rounded-full ring-2 ring-white" :src="avatar"  alt="">

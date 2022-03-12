@@ -63,4 +63,8 @@ Route::get('/map', [MapController::class, 'index'])->middleware(['auth', 'verifi
  Route::get('health_status', [DailyHealthCheckController::class, 'healthStatus'])->middleware(['auth', 'verified'])->name('healthStatus');
 
  
+
+
+ Route::get('contingecy_report/{id}', [DashboardController::class, 'contingencyReport'])->middleware(['auth', 'verified'])->name('contingency_report');
+
 require __DIR__.'/auth.php';

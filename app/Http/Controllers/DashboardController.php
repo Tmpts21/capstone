@@ -55,4 +55,20 @@ class DashboardController extends Controller
         ]);
 
     }
+
+
+    public function contingencyReport($id) { 
+
+        $student = User::findorfail($id); 
+        
+
+        return Inertia::render('ContingencyReport' , [
+            'status' => $student->status ,
+            'name' => $student->name 
+        ]);
+
+
+        
+
+    }
 }
