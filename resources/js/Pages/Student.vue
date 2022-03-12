@@ -9,10 +9,24 @@
                     <div class="flex flex-col sm:justify-center items-center pt-6 sm:pt-0 ">
                         
                    
-                        <Link v-if="statuses.includes(student.status)" :href="route('contingency_report' , {id : student.id })" class="bg-red-800 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full" v-html="'View Student Report'"
+                    <Link           :class="{
+                                    'bg-green-800' : student.status == 'normal', 
+                                    'bg-orange-800' : student.status == 'in_triage',
+                                    'bg-yellow-400 text-black' : student.status == 'in_quarantine',
+                                    'bg-indigo-800' : student.status == 'in_antigen',
+                                    'bg-red-800' : student.status == 'is_positive',
+                                    }"  
+                                    v-if="statuses.includes(student.status)" :href="route('contingency_report' , {id : student.id })" class="text-white font-bold py-2 px-4 rounded-full" v-html="'View Student Report'"
                         />
 
-                        <div v-else-if="student.status == 'normal' " class="ml-5 bg-green-800 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full" target="_blank" alt=""> Student is in Healthy Condition <i class="fa-solid fa-face-smile"></i>  </div>
+                        <div  :class="{
+                                          'bg-green-800' : student.status == 'normal', 
+                                          'bg-orange-800' : student.status == 'in_triage',
+                                          'bg-yellow-400 text-black' : student.status == 'in_quarantine',
+                                          'bg-indigo-800' : student.status == 'in_antigen',
+                                          'bg-red-800' : student.status == 'is_positive',
+                                          }"   
+                                          v-else-if="student.status == 'normal' " class="ml-5 text-white font-bold py-2 px-4 rounded-full" target="_blank" alt=""> Student is in Healthy Condition <i class="fa-solid fa-face-smile"></i>  </div>
 
                         <br>
                         <img v-if="avatar" class="inline-block h-24 w-24 rounded-full ring-2 ring-white" :src="avatar"  alt="">
@@ -126,7 +140,7 @@ export default {
     BreezeAuthenticatedLayout,
   },
   setup (props) {
-   const statuses = ['in_triage','in_quarantine' ,'is_positive']
+   const statuses = ['in_triage','in_quarantine' ,'is_positive','in_antigen']
    
 
    return {statuses} 

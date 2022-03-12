@@ -32,7 +32,7 @@ const showingNavigationDropdown = ref(false);
                                 <i class="fa-solid fa-chart-area text-blue-800 mr-2 text-lg"></i>    Dashboard
                                 </BreezeNavLink>
                                 <BreezeNavLink :href="route('map')" :active="route().current('map')">
-                                  <i class="fas fa-map text-blue-800 mr-2 text-lg"></i>   Interactive map 
+                                    Interactive map 
                                 </BreezeNavLink>
                                 <BreezeNavLink :href="route('health_check')" :active="route().current('health_check')">
                                    <i class="fa-solid fa-calendar-days mr-2 text-lg text-blue-800 "></i>

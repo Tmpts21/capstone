@@ -63,6 +63,9 @@ Route::get('/map', [MapController::class, 'index'])->middleware(['auth', 'verifi
  Route::get('health_status', [DailyHealthCheckController::class, 'healthStatus'])->middleware(['auth', 'verified'])->name('healthStatus');
 
  
+ 
+
+ Route::get('change_student_status', [DashboardController::class, 'changeStudentStatus'])->middleware(['auth', 'verified'])->name('change_student_status');
 
 
  Route::get('contingecy_report/{id}', [DashboardController::class, 'contingencyReport'])->middleware(['auth', 'verified'])->name('contingency_report');

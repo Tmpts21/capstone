@@ -64,11 +64,22 @@ class DashboardController extends Controller
 
         return Inertia::render('ContingencyReport' , [
             'status' => $student->status ,
-            'name' => $student->name 
+            'name' => $student->name ,
+            'id' => $student->id 
         ]);
 
 
         
+
+    }
+
+    public function changeStudentStatus(Request $request) {
+        
+        $student = User::findorfail($request->id) ; 
+        $student->status = $request->status ;
+        $student->save(); 
+
+        return redirect('student_reports')->with('message','Successfully Updated');
 
     }
 }

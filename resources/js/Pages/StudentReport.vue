@@ -3,6 +3,12 @@
 
 <section class="antialiased bg-gray-100 text-gray-600 h-screen px-4">
     <div class="flex flex-col justify-center h-full">
+
+        <div v-if="$page.props.flash.message" class="alert">
+                <div class="bg-green-100 border-l-4 border-green-500 text-green-700 p-4" role="alert">
+                    <p>{{ $page.props.flash.message }}</p>
+                </div>
+            </div>
         <!-- Table -->
         <div class="w-full max-w-2xl mx-auto bg-white shadow-lg rounded-sm border border-gray-200">
 
@@ -38,17 +44,45 @@
                                     </div>
                                 </td>
                                 <td class="p-4 whitespace-nowrap ">
-                                    <div v-if="!statuses.includes(user.status)" class="text-left text-green-800 font-bold ">{{user.status}}</div>
-                                    <div v-else class="text-left text-red-800 font-bold ">{{user.status}}</div>
+                                    <div :class="{
+                                      'text-green-800' : user.status == 'normal', 
+                                      'text-orange-800' : user.status == 'in_triage',
+                                      'text-yellow-400 text-black' : user.status == 'in_quarantine',
+                                      'text-indigo-800' : user.status == 'in_antigen',
+                                      'text-red-800' : user.status == 'is_positive',
+                                      }"  
+                                      v-if="!statuses.includes(user.status)" class="text-left text-green-800 font-bold ">{{user.status}}</div>
+                                    <div :class="{
+                                      'text-green-800' : user.status == 'normal', 
+                                      'text-orange-800' : user.status == 'in_triage',
+                                      'text-yellow-400 text-black' : user.status == 'in_quarantine',
+                                      'text-indigo-800' : user.status == 'in_antigen',
+                                      'text-red-800' : user.status == 'is_positive',
+                                      }" 
+                                       v-else class="text-left text-red-800 font-bold ">{{user.status}}</div>
 
                                 </td>
                               <td class="p-4 whitespace-nowrap  ">
                                     <div class="text-center">
-                                      <Link v-if="!statuses.includes(user.status)" :href="route('student' , {id : user.id })" class="bg-green-800 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full" v-html="'view'"
+                                      <Link :class="{
+                                          'bg-green-800' : user.status == 'normal', 
+                                          'bg-orange-800' : user.status == 'in_triage',
+                                          'bg-yellow-400 text-black' : user.status == 'in_quarantine',
+                                          'bg-indigo-800' : user.status == 'in_antigen',
+                                          'bg-red-800' : user.status == 'is_positive',
+                                          }"  
+                                           v-if="!statuses.includes(user.status)" :href="route('student' , {id : user.id })" class="text-white font-bold py-2 px-4 rounded-full" v-html="'view'"
                                           
                                       />
-                                       <Link v-else :href="route('student' , {id : user.id })" class="bg-red-800 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full" v-html="'view'"
-                                          
+                                       <Link :class="{
+                                      'bg-green-800' : user.status == 'normal', 
+                                      'bg-orange-800' : user.status == 'in_triage',
+                                      'bg-yellow-400 text-black' : user.status == 'in_quarantine',
+                                      'bg-indigo-800' : user.status == 'in_antigen',
+                                      'bg-red-800' : user.status == 'is_positive',
+                                      }" 
+                                      v-else :href="route('student' , {id : user.id })" class=" text-white font-bold py-2 px-4 rounded-full" v-html="'view'"
+                                                                    
                                       />
                                     </div>
                                 </td>
