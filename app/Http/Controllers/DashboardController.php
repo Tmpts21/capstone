@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Inertia\Inertia;
 use App\Models\User;
 use Auth ;
+use Carbon\Carbon;
 
 use Illuminate\Support\Facades\Storage;
 
@@ -21,7 +22,10 @@ class DashboardController extends Controller
         return Inertia::render('StudentReport',[
             'users' =>  User::query()
             ->when(\Request::input('search') , function ($query , $search) { 
-                $query->where('name' , 'like' , "%{$search}%" ) ;
+                $query
+                ->where('name' , 'like' , "%{$search}%" )
+                ->orWhere('status' , 'like' , "%{$search}%" )
+                 ;
             })
             ->paginate(10)
             ->withQueryString(),
@@ -61,11 +65,16 @@ class DashboardController extends Controller
 
         $student = User::findorfail($id); 
         
+        if($student->rem_days) { 
+            $rem_days = Carbon::now()->diffInDays($student->rem_days);
+        }else { $rem_days = null ; }
+        
 
         return Inertia::render('ContingencyReport' , [
             'status' => $student->status ,
             'name' => $student->name ,
-            'id' => $student->id 
+            'id' => $student->id ,
+            'rem_days' => $rem_days
         ]);
 
 
@@ -74,8 +83,23 @@ class DashboardController extends Controller
     }
 
     public function changeStudentStatus(Request $request) {
-        
         $student = User::findorfail($request->id) ; 
+
+        if ($request->status == 'normal') { 
+            $student->rem_days = null ;
+        }
+
+        if ($request->status == 'in_quarantine') { 
+            $newDateTime = Carbon::now()->addDays(intval($request->rem_days));
+            $student->rem_days = $newDateTime->toDateTimeString();
+        }
+
+        
+        if ($request->status == 'is_positive') { 
+            $newDateTime = Carbon::now()->addDays(intval(30));
+            $student->rem_days = $newDateTime->toDateTimeString();
+        }
+        
         $student->status = $request->status ;
         $student->save(); 
 

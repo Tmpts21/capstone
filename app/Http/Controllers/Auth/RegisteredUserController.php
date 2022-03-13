@@ -12,6 +12,8 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Http;
+
 
 class RegisteredUserController extends Controller
 {
@@ -36,6 +38,11 @@ class RegisteredUserController extends Controller
     public function store(Request $request)
 
     {        
+
+
+
+
+        
        
 
         
@@ -52,62 +59,24 @@ class RegisteredUserController extends Controller
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
-        $barangays = ['Pantubig',
-        'Pasong Bangkal',
-        'Pasong Callos', 
-        'Pason intsik',
-        'Pinacpinacan',
-        'Poblacion',
-        'Pulo',
-        'Pulong Bayabas',
-        'Salapungan',
-        'Sampaloc',
-        'San Agustin',
-        'San Roque',
-        'Talacsan',
-        'Tambubong',
-        'Tukod',
-        'Ulingao',
-        'Sapang Pahalang'];
+        // dd($request->city , $request->barangay , 'https://maps.googleapis.com/maps/api/geocode/json?address='.$request->city.'+'.$request->barangay.'&key=AIzaSyB1qd_-4A10jIuNomSf4hb5ATOLqgLr6SY');
 
 
-        $coordinates = [
-            [15.026340,121.118430],
-            [15.0024 ,121.0134],
-            [14.9955, 120.9905],
-            [15.0093 ,120.9676],
-            [14.9911 , 120.9159 ],
-            [14.9567 , 120.9633],
-            [14.9756 , 121.0192 ],
-            [15.0179 , 120.9102 ],
-            [15.0216 , 120.9633 ],
-            [14.9809 ,120.9231],
-            [15.0294,120.9288],
-            [15.0093,120.9331],
-            [14.9652,120.9848],
-            [14.9701,120.9260],
-            [14.9964,121.0536],
-            [14.9796,120.9145],
-            [14.9938,121.0364],
-        ];
-
-
-        $b = rand(1 , count($barangays)) - 1 ;
-    
-
+        
+        $coordinates = Http::get('https://maps.googleapis.com/maps/api/geocode/json?address='.$request->city.'+'.$request->barangay.'&key=AIzaSyB1qd_-4A10jIuNomSf4hb5ATOLqgLr6SY');
               
 
         $user = User::create([
             'name' => $request->name,
             'gender' => $request->gender,
             'city' => $request->city,
-            'barangay' => $barangays[$b],
+            'barangay' => $request->barangay,
             'present_address' => $request->present_address,
             'permanent_address' => $request->permanent_address,
             'phone_number' => $request->phone_number,
             'email' => $request->email,
-            'latitude' => $coordinates[$b][0],
-            'longitude' => $coordinates[$b][1],
+            'latitude' => $coordinates['results'][0]['geometry']['location']['lat'] ,
+            'longitude' => $coordinates['results'][0]['geometry']['location']['lng'],
             'password' => Hash::make($request->password),
         ]);
 

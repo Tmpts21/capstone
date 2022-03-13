@@ -57,9 +57,14 @@ class DailyHealthCheckController extends Controller
        if ( (Auth::user()->tracing_log) ) { 
             $tracing_log = Storage::disk('s3')->url(Auth::user()->tracing_log);
        }else { $tracing_log = null; }
+
+       if(Auth::user()->rem_days) { 
+           $rem_days = Carbon::now()->diffInDays(Auth::user()->rem_days);
+       }else {$rem_days = null ; }
        
         return Inertia::render('HealthStatus',[
             'tracing_log' => $tracing_log  ,
+            'rem_days' =>  $rem_days
         ]);
     }
 

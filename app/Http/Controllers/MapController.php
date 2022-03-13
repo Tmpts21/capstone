@@ -61,18 +61,32 @@ class MapController extends Controller
         ];
 
         $brgys = array();
+        $c = array(); 
 
         foreach($students as $student) {
             array_push($brgys , $student->barangay  );
+            array_push($c , [$student->latitude , $student->longitude] );
+
         }
+
+
+
+
 
 
         $map_data = array(); 
         $brgys_count = array_count_values($brgys);
+
+
+
+    
         
-        
-        foreach($brgys_count as $key => $value ){ 
-            $mapObject = (object)['barangay' => $key , 'student_count' => $value , 'lat' => floatval($coordinates[array_search($key , $barangays)][0]) , 'long' =>  floatval($coordinates[array_search($key , $barangays)][1])];
+        foreach($brgys_count as $key => $value ){
+            
+            $mapObject = (object)['barangay' => $key , 
+                                    'student_count' => $value , 
+                                    'lat' => floatval($c[array_search($key , $brgys)][0]) ,
+                                    'long' =>  floatval($c[array_search($key , $brgys)][1])];
             array_push($map_data , $mapObject);
         }
 

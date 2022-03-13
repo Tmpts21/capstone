@@ -27,7 +27,7 @@
                                           'bg-red-800' : student.status == 'is_positive',
                                           }"   
                                           v-else-if="student.status == 'normal' " class="ml-5 text-white font-bold py-2 px-4 rounded-full" target="_blank" alt=""> Student is in Healthy Condition <i class="fa-solid fa-face-smile"></i>  </div>
-
+                     
                         <br>
                         <img v-if="avatar" class="inline-block h-24 w-24 rounded-full ring-2 ring-white" :src="avatar"  alt="">
                         <span v-else>No avatar </span>
@@ -104,6 +104,20 @@
                                 <label >Contract Tracing Log </label> 
                         <a  v-if="tracing_log" class="ml-5 bg-blue-800 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" :href="tracing_log" target="_blank"  alt=""> View tracing Log </a>
                         <span v-else > :  Student Has no Tracing Log yet </span>
+            </div>
+
+            <div class="mt-6 ">
+
+                    <label >Medical Assesment  </label> 
+                   <Link        :class="{
+                                    'bg-green-800' : student.status == 'normal', 
+                                    'bg-orange-800' : student.status == 'in_triage',
+                                    'bg-yellow-400 text-black' : student.status == 'in_quarantine',
+                                    'bg-indigo-800' : student.status == 'in_antigen',
+                                    'bg-red-800' : student.status == 'is_positive',
+                                    }"  
+                                     :href="route('contingency_report' , {id : student.id })" class=" mt-2 text-white font-bold py-2 px-4 rounded-full" v-html="'Perform medical Assesment '"
+                        />
             </div>
 
    <br>

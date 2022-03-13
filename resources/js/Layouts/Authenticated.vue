@@ -19,6 +19,7 @@ const showingNavigationDropdown = ref(false);
                     <div class="flex justify-between h-16">
                         <div class="flex">
                             <!-- Logo -->
+                            
                             <div class="shrink-0 flex items-center">
                                 <Link :href="route('dashboard')">
                                 
@@ -32,7 +33,7 @@ const showingNavigationDropdown = ref(false);
                                 <i class="fa-solid fa-chart-area text-blue-800 mr-2 text-lg"></i>    Dashboard
                                 </BreezeNavLink>
                                 <BreezeNavLink :href="route('map')" :active="route().current('map')">
-                                    Interactive map 
+                                   <i class="fa-solid fa-map mr-2 text-lg text-blue-800 "></i>  Interactive map 
                                 </BreezeNavLink>
                                 <BreezeNavLink :href="route('health_check')" :active="route().current('health_check')">
                                    <i class="fa-solid fa-calendar-days mr-2 text-lg text-blue-800 "></i>
@@ -57,9 +58,19 @@ const showingNavigationDropdown = ref(false);
                                     <template #trigger>
                                         <span class="inline-flex rounded-md">
                                             <button type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
+                                                
+                                                <h5 class="mr-5 " :class="{
+                                                    'bg-green-800 text-black  text-lg hover:bg-green-700 rounded-full p-2 ' : $page.props.auth.user.status == 'normal', 
+                                                    'bg-orange-400 text-black hover:bg-blue-600 rounded-full p-2' : $page.props.auth.user.status == 'in_triage',
+                                                    'bg-yellow-400 text-black hover:bg-yellow-600 rounded-full p-2 ' : $page.props.auth.user.status == 'in_quarantine',
+                                                    'bg-indigo-800 text-black hover:bg-indigo-700 rounded-full p-2' : $page.props.auth.user.status == 'in_antigen',
+                                                    'bg-red-800 text-black hover:bg-red-700 rounded-full p-2' : $page.props.auth.user.status == 'is_positive',
+                                                    }" 
+                                                    >{{ $page.props.auth.user.status }}</h5>
+
                                                 {{ $page.props.auth.user.name }}
 
-                                                <h5 class="ml-5">{{ $page.props.auth.user.status }}</h5>
+                                                
 
                                                 <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                                     <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
