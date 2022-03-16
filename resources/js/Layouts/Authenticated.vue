@@ -58,7 +58,7 @@ const showingNavigationDropdown = ref(false);
                                     <template #trigger>
                                         <span class="inline-flex rounded-md">
                                             <button type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
-                                                
+                                                <span class="mr-2">Status : </span>
                                                 <h5 class="mr-5 " :class="{
                                                     'bg-green-800 text-black  text-lg hover:bg-green-700 rounded-full p-2 ' : $page.props.auth.user.status == 'normal', 
                                                     'bg-orange-400 text-black hover:bg-blue-600 rounded-full p-2' : $page.props.auth.user.status == 'in_triage',
@@ -66,9 +66,9 @@ const showingNavigationDropdown = ref(false);
                                                     'bg-indigo-800 text-black hover:bg-indigo-700 rounded-full p-2' : $page.props.auth.user.status == 'in_antigen',
                                                     'bg-red-800 text-black hover:bg-red-700 rounded-full p-2' : $page.props.auth.user.status == 'is_positive',
                                                     }" 
-                                                    >{{ $page.props.auth.user.status }}</h5>
+                                                    > {{$page.props.auth.user.status}}</h5>
 
-                                                {{ $page.props.auth.user.name }}
+                                                        {{ $page.props.auth.user.name }}
 
                                                 
 

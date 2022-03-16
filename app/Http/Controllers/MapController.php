@@ -21,56 +21,16 @@ class MapController extends Controller
 
     private function handleMapData($students) { 
 
-        $barangays = ['Pantubig',
-        'Pasong Bangkal',
-        'Pasong Callos', 
-        'Pason intsik',
-        'Pinacpinacan',
-        'Poblacion',
-        'Pulo',
-        'Pulong Bayabas',
-        'Salapungan',
-        'Sampaloc',
-        'San Agustin',
-        'San Roque',
-        'Talacsan',
-        'Tambubong',
-        'Tukod',
-        'Ulingao',
-        'Sapang Pahalang'];
-
-
-        $coordinates = [
-            [15.026340,121.118430],
-            [15.045960,121.316850],
-            [14.9955, 120.9905],
-            [15.0093 ,120.9676],
-            [14.9911 , 120.9159 ],
-            [14.9567 , 120.9633],
-            [14.9756 , 121.0192 ],
-            [15.0179 , 120.9102 ],
-            [15.0216 , 120.9633 ],
-            [14.9809 ,120.9231],
-            [15.0294,120.9288],
-            [15.0093,120.9331],
-            [14.9652,120.9848],
-            [14.9701,120.9260],
-            [14.9964,121.0536],
-            [14.9796,120.9145],
-            [14.9938,121.0364],
-        ];
-
+      
         $brgys = array();
         $c = array(); 
 
+        $studentStatuses = array() ;
         foreach($students as $student) {
             array_push($brgys , $student->barangay  );
             array_push($c , [$student->latitude , $student->longitude] );
-
+            array_push($studentStatuses , [$student->status , $student->barangay]);
         }
-
-
-
 
 
 
@@ -78,15 +38,40 @@ class MapController extends Controller
         $brgys_count = array_count_values($brgys);
 
 
-
-    
-        
         foreach($brgys_count as $key => $value ){
+            $normal= 0 ;
+            $in_triage = 0 ;
+            $in_quarantine = 0 ; 
+            $positive = 0 ;
+            $antigen = 0 ;
+
+            foreach($studentStatuses as $x=> $y ){
+                
+                // statuses on each barangays
+                if($y[1] ==  $key && $y[0] == 'normal' ){ 
+                    $normal++ ; 
+                }else if($y[1] == $key && $y[0] == 'in_triage') { 
+                    $in_triage++;
+                }else if($y[1] == $key && $y[0] == 'is_positive') { 
+                    $positive++;
+                }else if($y[1] == $key && $y[0] == 'in_quarantine') { 
+                    $in_quarantine++;
+                }else if($y[1] == $key && $y[0] == 'in_antigen') { 
+                    $antigen++;
+                }
+            }
+
             
             $mapObject = (object)['barangay' => $key , 
                                     'student_count' => $value , 
                                     'lat' => floatval($c[array_search($key , $brgys)][0]) ,
-                                    'long' =>  floatval($c[array_search($key , $brgys)][1])];
+                                    'long' =>  floatval($c[array_search($key , $brgys)][1]),
+                                    'normalCount' => $normal,
+                                    'in_triage' => $in_triage,
+                                    'in_quarantine' => $in_quarantine , 
+                                    'in_antigen' => $antigen , 
+                                    'positive' => $positive];
+
             array_push($map_data , $mapObject);
         }
 

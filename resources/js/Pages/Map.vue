@@ -34,7 +34,6 @@
       v-for="(data, index) in mapData"
       :position="{lat : data.lat , lng : data.long }"
       :clickable="true"
-      :draggable="true"
     >
      <GMapInfoWindow
              :opened="true"
@@ -47,15 +46,26 @@
         <div class='text-green-500'>
           Number of students residing: <span class="text-green-800 font-bold">{{data.student_count}}</span>
         </div>
+        <hr class="mt-2">
+        <br>
         <div>
-           <div class='text-red-500'>
-              Active cases : <span class="text-red-800 font-bold">{{Math.floor(Math.random() * 100)}}</span>
+          <span class="font-bold">Student Tracker <i class="fa-solid fa-magnifying-glass-location "></i> </span>
+           <div class='text-green-500'>
+              Healthy : <span class="text-red-800 font-bold">{{data.normalCount}}</span>
           </div>
-           <div class='text-orange-500'>
-              Recovered cases : <span class="text-orange-800 font-bold">{{Math.floor(Math.random() * 100)}}</span>
+           <div class='text-red-500'>
+              Positive   : <span class="text-orange-800 font-bold">{{data.positive}}</span>
           </div>
            <div class='text-yellow-500'>
-              Died cases : <span class="text-yellow-800 font-bold">{{Math.floor(Math.random() * 100)}}</span>
+              In triage Area  : <span class="text-yellow-800 font-bold">{{data.in_triage}}</span>
+          </div>
+
+           <div class='text-orange-300'>
+              In quarantine: <span class="text-yellow-800 font-bold">{{data.in_quarantine}}</span>
+          </div>
+
+          <div class='text-indigo-500'>
+              Undergoing Antigen Testing : <span class="text-yellow-800 font-bold">{{data.in_antigen}}</span>
           </div>
 
           <div class='text-blue-500'>
