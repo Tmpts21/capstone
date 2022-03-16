@@ -36,6 +36,13 @@ const submit = () => {
 
         <BreezeValidationErrors class="mb-4" />
 
+          <div v-if="$page.props.flash.message" class="alert">
+                <div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4" role="alert">
+                    <p>{{ $page.props.flash.message }}</p>
+                </div>
+            </div>
+            <br>
+
         <form @submit.prevent="submit">
 
            

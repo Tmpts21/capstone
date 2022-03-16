@@ -39,14 +39,6 @@ class RegisteredUserController extends Controller
 
     {        
 
-
-
-
-        
-       
-
-        
-
         $request->validate([
             'name' => 'required|string|max:255',
             'gender' => 'required|string|max:7',
@@ -65,7 +57,9 @@ class RegisteredUserController extends Controller
         
         $coordinates = Http::get('https://maps.googleapis.com/maps/api/geocode/json?address='.$request->city.'+'.$request->barangay.'&key=AIzaSyB1qd_-4A10jIuNomSf4hb5ATOLqgLr6SY');
               
-
+        if($coordinates['results'] == []) { 
+            return redirect()->back()->with('message' , 'Pls input a valid City or Barangay');
+        }
         $user = User::create([
             'name' => $request->name,
             'gender' => $request->gender,

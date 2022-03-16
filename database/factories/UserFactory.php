@@ -57,12 +57,10 @@ class UserFactory extends Factory
             [14.9938,121.0364],
       ];
 
-
         $b = rand(1 , count($barangays)) - 1 ;
         $gender = $this->faker->randomElements(['male', 'female'])[0];
-
         $status =  $this->faker->randomElement(['normal', 'in_triage' ,'in_quarantine' ,'in_antigen','is_positive']);
-        dump($status);
+
         return [
             'name' => $this->faker->name(),
             'email' => $this->faker->unique()->safeEmail(),
