@@ -34,6 +34,8 @@ return new class extends Migration
 
             $table->string('rem_days')->nullable();
 
+            $table->string('dailyHealthCheckDate')->nullable(); 
+
             $table->string('status')->default('normal');
             $table->string('role')->default('student');
 

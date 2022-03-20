@@ -21,11 +21,12 @@ class DailyHealthCheckController extends Controller
 
     public function checkHealthForm(Request $request) { 
         $forbiden_status = ['in_triage','in_quarantine','is_positive'];
-        $a = User::find(Auth::user()->id)->dailyHealthCheck->first() ;
+        $user = User::find(Auth::user()->id);
+        $a = $user->dailyHealthCheck->first() ;
         if($a){
-            $date =  Carbon::parse(User::find(Auth::user()->id)->dailyHealthCheck->first()->created_at) ; 
+            $date =  Carbon::parse($a->created_at) ; 
             if (in_array(Auth::user()->status , $forbiden_status )){ 
-                return redirect('health_check')->with('status' ,"You're current status is prohibiting you to submit this form. Please contact your admin regarding this matter.  " );
+                return redirect('health_check')->with('status' ,"You're current status is prohibiting you to submit this form. Please contact your admin/school nurse regarding this matter. " );
             }
             if ($date->isToday()) { 
                 return redirect('health_check')->with('status' ,'Thanks for answering but you already submitted your daily health form ');
@@ -42,6 +43,11 @@ class DailyHealthCheckController extends Controller
                 $user->save(); 
             }
         }
+
+        $user->dailyHealthCheckDate = Carbon::now(); 
+        $user->save();
+
+
 
         $health = HealthCheck::create([
             'user_id' => Auth::user()->id ,

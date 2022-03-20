@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Storage;
 class DashboardController extends Controller
 {
     public function index() { 
-        return Inertia::render('Dashboard');
+        return Inertia::render('Dashboard' , ['student' => Auth::user()]);
     }
 
     public function studentReports() { 
