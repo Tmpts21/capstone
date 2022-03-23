@@ -41,6 +41,8 @@ return new class extends Migration
 
             $table->string('tracing_log')->nullable();
 
+            $table->string('medical_assesment')->nullable();
+
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

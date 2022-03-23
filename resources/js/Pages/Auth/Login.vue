@@ -53,9 +53,10 @@ const submit = () => {
                 </label>
             </div>
 
+
             <div class="flex items-center justify-end mt-4">
-                <Link v-if="canResetPassword" :href="route('password.request')" class="underline text-sm text-gray-600 hover:text-gray-900">
-                    Forgot your password?
+                <Link  :href="'/dataprivacy'" class="underline text-sm text-gray-600 hover:text-gray-900">
+                    No account yet ? Register Here
                 </Link>
 
                 <BreezeButton class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">

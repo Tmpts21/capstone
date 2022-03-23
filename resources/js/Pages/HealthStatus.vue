@@ -103,7 +103,7 @@ export default {
         <br>
         <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Contract Tracing log </h5>
         <br>
-            <iframe class="w-9/12 h-screen" :src="tracing_log">asdasdsad</iframe>
+            <iframe class="w-9/12 h-screen" :src="tracing_log"></iframe>
     </div>
 
 

@@ -22,7 +22,7 @@ use App\Http\Controllers\DailyHealthCheckController;
 */
 
 Route::get('/', function () {
-    return Inertia::render('Welcome', [
+    return Inertia::render('Auth/Login', [
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
         'laravelVersion' => Application::VERSION,
@@ -47,7 +47,10 @@ Route::get('/map', [MapController::class, 'index'])->middleware(['auth', 'verifi
  Route::post('/add_tracing_log', [ProfileController::class, 'addTracingLog'])->middleware(['auth','verified'])->name('add_tracing_log');
 
 
+ Route::post('/add_medical_assesment', [ProfileController::class, 'addMedicalAssesment'])->middleware(['auth','verified'])->name('add_medical_assesment');
 
+
+ 
 
  Route::get('/student_reports', [DashboardController::class, 'studentReports'])->middleware(['auth', 'verified'])->name('student_reports');
 

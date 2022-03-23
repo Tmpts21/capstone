@@ -50,12 +50,18 @@ class DashboardController extends Controller
         }else {$tracing_log = null ; }
 
 
+        if ($student->medical_assesment) { 
+            $medical_assesment = Storage::disk('s3')->url($student->medical_assesment); 
+        }else {$medical_assesment = null ; }
+
         
         return Inertia::render('Student' , [
             'student' => $student,
             'avatar' => $avatar ,
             'vax_image' => $vax_image,
-            'tracing_log' => $tracing_log
+            'tracing_log' => $tracing_log,
+            'medical_assesment' => $medical_assesment
+
         ]);
 
     }

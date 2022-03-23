@@ -57,28 +57,6 @@ export default {
                     </a>
                 </div>
 
-                  <div class="grid grid-rows-1 grid-cols-2">  
-                        <div class="bg-blue-100 border-blue-500 text-blue-700 p-5" role="alert">
-                        <i class="fa-solid fa-virus float-left  ml-3 text-9xl" ></i> 
-                            <p class="text-center font-bold mt-10 "><h5> Total cases </h5></p>
-                            <p class='text-center font-bold text-4xl' >113,023 </p>                        </div>
-                         <div class="grid grid-cols-2 ">
-                        <div class="bg-red-100 border-red-500 text-red-700 p-4 " role="alert">
-                            <i class="fa-solid fa-bacterium float-left mt-3 ml-3 text-3xl" ></i> 
-                            <p class="text-center font-bold"><h5> Active cases </h5></p>
-                            <p class='text-center font-bold' style="font-size:25px">12,023 </p>
-                        </div>
-                          <div class="bg-green-100  border-green-500 text-green-700 p-4 " role="alert">
-                            <i class="fa-solid fa-hand-holding-medical float-left mt-3 ml-3 text-3xl" ></i> 
-                            <p class="text-center font-bold"><h5>Recovered</h5> </p>
-                            <p class='text-center font-bold' style="font-size:25px">57,023 </p>
-                        </div>
-                          <div class="bg-orange-100  col-span-2 border-orange-500 text-orange-700" role="alert">
-                            <p class="text-center font-bold"> <i class=" fa-solid fa-skull mt-3 text-3xl" ></i>   <h5>Died</h5> </p>
-                            <p class='text-center font-bold' style="font-size:25px">1,423 </p>
-                        </div>
-                        </div>
-                </div>
                 
                   
             </div>

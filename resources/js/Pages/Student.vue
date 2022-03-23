@@ -2,6 +2,12 @@
 <BreezeAuthenticatedLayout>
  <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
      <br><br>
+
+       <div v-if="$page.props.flash.message" class="alert">
+                <div class="bg-green-100 border-l-4 border-green-500 text-green-700 p-4" role="alert">
+                    <p>{{ $page.props.flash.message }}</p>
+                </div>
+        </div>
       
         <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white shadow-md  sm:rounded-lg">
           
@@ -101,35 +107,60 @@
     <br>
     
             <div class="mt-4">
-                                <label >Contract Tracing Log </label> 
+                        <label >Contract Tracing Log </label> 
                         <a  v-if="tracing_log" class="ml-5 bg-blue-800 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" :href="tracing_log" target="_blank"  alt=""> View tracing Log </a>
                         <span v-else > :  Student Has no Tracing Log yet </span>
             </div>
 
-            <div class="mt-6 ">
+         <div class="mt-4">
+                <label >Medical Assesment  </label> 
+                    <a  v-if="medical_assesment" class="ml-5 bg-blue-800 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" :href="medical_assesment" target="_blank" alt=""> View Medical Assesment </a>
+                    <span v-else> : Medical Assesment not available </span>
+        </div>
+            <div class="mt-6">
+                 <form @submit.prevent="submit(student.id)">
+                <div class="flex flex-col pt-6 sm:pt-0 ">
+                    <div class="mt-4">
+                        <label for="tracing_log" > Add/update Medical assesment </label>
+                        <input id="tracing_log" type="file" class="mt-1 block w-full  block
+                                                                    w-full
+                                                                    px-3
+                                                                    py-1.5
+                                                                    text-base
+                                                                    font-normal
+                                                                    text-gray-700
+                                                                    bg-white bg-clip-padding
+                                                                    border border-solid border-gray-300
+                                                                    rounded
+                                                                    transition
+                                                                    ease-in-out
+                                                                    m-0
+                                                                    focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" 
+                                                                    @input="form.medical_assesment = $event.target.files[0]" enctype="multipart/form-data"  />
+                </div>
 
-                    <label >Medical Assesment  </label> 
-                   <Link        :class="{
-                                    'bg-green-800' : student.status == 'normal', 
-                                    'bg-orange-800' : student.status == 'in_triage',
-                                    'bg-yellow-400 text-black' : student.status == 'in_quarantine',
-                                    'bg-indigo-800' : student.status == 'in_antigen',
-                                    'bg-red-800' : student.status == 'is_positive',
-                                    }"  
-                                     :href="route('contingency_report' , {id : student.id })" class=" mt-2 text-white font-bold py-2 px-4 rounded-full" v-html="'Perform medical Assesment '"
-                        />
-            </div>
-
-   <br>
-
-       
+                    <div class="flex items-center justify-end mt-4">
+                        <BreezeButton class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+                        <i class="fas fa-save"> Save</i>  
+                        </BreezeButton>
+                    </div>
 
 
-       
-         
-                  </div>
+                    </div>
 
-         </div>
+                </form>
+                    </div>
+
+        <br>
+
+            
+
+
+            
+                
+                        </div>
+
+                </div>
 
          </div>
 
@@ -146,18 +177,30 @@ import BreezeAuthenticatedLayout from '@/Layouts/Authenticated.vue';
 
 
 import { Head, Link, useForm } from '@inertiajs/inertia-vue3';
+import BreezeButton from '@/Components/Button.vue';
 
 export default {
-  props : ['student','avatar' ,'tracing_log' ,'vax_image'],
+  props : ['student','avatar' ,'tracing_log' ,'vax_image' ,'medical_assesment'],
   components : { 
     Link,
     BreezeAuthenticatedLayout,
+    BreezeButton
+    
   },
   setup (props) {
-   const statuses = ['in_triage','in_quarantine' ,'is_positive','in_antigen']
-   
+    const form = useForm({
+        'medical_assesment': null ,
+        'student_id' : null 
+    });
 
-   return {statuses} 
+    const statuses = ['in_triage','in_quarantine' ,'is_positive','in_antigen']
+
+    function submit(id) {
+      form.student_id = id 
+      Inertia.post('/add_medical_assesment', form)
+    }
+
+   return {statuses , form , submit} 
   },
 }
 </script>

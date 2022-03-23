@@ -81,6 +81,7 @@ class ProfileController extends Controller
 
     public function addTracingLog(Request $request) { 
 
+
         $validated = $request->validate([
             'tracing_log' => 'mimes:pdf'
         ]);
@@ -97,4 +98,27 @@ class ProfileController extends Controller
         return redirect('health_status')->with('message','Successfully Updated');
 
     }
+
+    public function addMedicalAssesment(Request $request) { 
+
+        $validated = $request->validate([
+            'medical_assesment' => 'mimes:pdf',
+            'student_id' => 'required'
+        ]);
+
+        $student = User::findorfail($request->student_id);
+
+        if($request->hasFile('medical_assesment')) { 
+            $path = $request->file('medical_assesment')->store('medical_assesment' , 's3') ; 
+            $student->medical_assesment = $path ; 
+        }
+      
+
+        $student->save();
+
+        return redirect("/student". "/". $request->student_id)->with('message','Successfully Updated');
+
+    }
+
+    
 }
