@@ -21,12 +21,17 @@ class ProfileController extends Controller
             $vax_image = Storage::disk('s3')->url(Auth::user()->vaccination_card); 
         }else {$vax_image = null ; }
 
+        if (Auth::user()->medical_assesment) { 
+            $medical_assesment = Storage::disk('s3')->url(Auth::user()->medical_assesment); 
+        }else {$medical_assesment = null ; }
+
         
 
         return Inertia::render('Profile',[
             'user'=>Auth::user(),
             'avatar' => $avatar,
             'vax_image' => $vax_image,
+            'medical_assesment' => $medical_assesment
 
         ]);
     }

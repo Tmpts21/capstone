@@ -25345,7 +25345,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  props: ['user', 'avatar', 'vax_image'],
+  props: ['user', 'avatar', 'vax_image', 'medical_assesment'],
   components: {
     BreezeButton: _Components_Button_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
     BreezeInput: _Components_Input_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
@@ -28517,23 +28517,43 @@ var _hoisted_22 = {
 var _hoisted_23 = {
   "class": "mt-4"
 };
+var _hoisted_24 = {
+  "class": "mt-4 mb-4"
+};
 
-var _hoisted_24 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1
+var _hoisted_25 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", null, "Medical Assesment : ", -1
 /* HOISTED */
 );
 
-var _hoisted_25 = {
-  "class": "flex flex-col sm:justify-center items-center pt-6 sm:pt-0"
-};
-var _hoisted_26 = ["src"];
+var _hoisted_26 = ["href"];
 var _hoisted_27 = {
+  key: 1
+};
+
+var _hoisted_28 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1
+/* HOISTED */
+);
+
+var _hoisted_29 = {
+  "class": "mt-4 mb-2"
+};
+
+var _hoisted_30 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", null, "Vaccination Card : ", -1
+/* HOISTED */
+);
+
+var _hoisted_31 = ["href"];
+var _hoisted_32 = {
+  key: 1
+};
+var _hoisted_33 = {
   "class": "mt-4"
 };
-var _hoisted_28 = {
+var _hoisted_34 = {
   "class": "flex items-center justify-end mt-4"
 };
 
-var _hoisted_29 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+var _hoisted_35 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
   "class": "fas fa-save"
 }, " Save", -1
 /* HOISTED */
@@ -28697,13 +28717,23 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         autocomplete: "username"
       }, null, 8
       /* PROPS */
-      , ["modelValue"])]), _hoisted_24, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_25, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-        "class": "inline-block h-24 w-24",
-        src: $props.vax_image,
+      , ["modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_24, [_hoisted_25, $props.medical_assesment ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("a", {
+        key: 0,
+        "class": "ml-5 bg-blue-800 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full",
+        href: $props.medical_assesment,
+        target: "_blank",
         alt: ""
-      }, null, 8
+      }, " View Medical Assesment ", 8
       /* PROPS */
-      , _hoisted_26)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_27, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_BreezeLabel, {
+      , _hoisted_26)) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_27, " Not available "))]), _hoisted_28, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_29, [_hoisted_30, $props.vax_image ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("a", {
+        key: 0,
+        "class": "ml-5 bg-blue-800 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full",
+        href: $props.vax_image,
+        target: "_blank",
+        alt: ""
+      }, " View Vaccination Card ", 8
+      /* PROPS */
+      , _hoisted_31)) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_32, " Not Available "))]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_33, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_BreezeLabel, {
         "for": "vax_image",
         value: "Update Vacciantion card"
       }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_BreezeInput, {
@@ -28715,14 +28745,14 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         }),
         enctype: "multipart/form-data",
         autocomplete: "vax_image"
-      })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_28, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_BreezeButton, {
+      })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_34, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_BreezeButton, {
         "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["ml-4", {
           'opacity-25': $setup.form.processing
         }]),
         disabled: $setup.form.processing
       }, {
         "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-          return [_hoisted_29];
+          return [_hoisted_35];
         }),
         _: 1
         /* STABLE */

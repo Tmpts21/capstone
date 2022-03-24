@@ -87,10 +87,19 @@
                 <BreezeInput id="email" type="email" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" v-model="form.email"  autocomplete="username" />
             </div>
 
+              <div class="mt-4 mb-4 ">
+                <label >Medical Assesment :  </label> 
+                    <a  v-if="medical_assesment" class="ml-5 bg-blue-800 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" :href="medical_assesment" target="_blank" alt=""> View Medical Assesment </a>
+                    <span v-else>  Not available </span>
+        </div>
+
    <br>
 
-            <div class="flex flex-col sm:justify-center items-center pt-6 sm:pt-0 ">
-                                    <img class="inline-block h-24 w-24 " :src="vax_image" alt="">
+            <div class="mt-4 mb-2 ">
+                     <label >Vaccination Card :   </label> 
+                     <a  v-if="vax_image" class="ml-5 bg-blue-800 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" :href="vax_image" target="_blank" alt=""> View Vaccination Card  </a>
+                    <span v-else> Not Available  </span>
+
             </div>
             
             <div class="mt-4">
@@ -139,7 +148,7 @@ import BreezeAuthenticatedLayout from '@/Layouts/Authenticated.vue';
 import { Head, Link, useForm } from '@inertiajs/inertia-vue3';
 
 export default {
-  props : ['user','avatar','vax_image'],
+  props : ['user','avatar','vax_image','medical_assesment'],
   components : { 
     BreezeButton,
     BreezeInput,
