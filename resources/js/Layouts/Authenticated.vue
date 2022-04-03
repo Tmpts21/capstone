@@ -48,6 +48,11 @@ const showingNavigationDropdown = ref(false);
                                      <i class="fa-solid fa-table text-blue-800 mr-2 text-lg "></i>             
                                Student Report 
                                 </BreezeNavLink>
+
+                                <BreezeNavLink v-if="$page.props.auth.user.role =='admin'" :href="route('users')" :active="route().current('users')" >
+                                     <i class="fa-solid fa-users text-blue-800 mr-2 text-lg "></i>             
+                                 User Management 
+                                </BreezeNavLink>
                             </div>
                         </div>
 
@@ -58,13 +63,12 @@ const showingNavigationDropdown = ref(false);
                                     <template #trigger>
                                         <span class="inline-flex rounded-md">
                                             <button type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
-                                            <span class="mr-2">Status : </span>
                                                 <h5 class="mr-5 " :class="{
-                                                    'bg-green-800 text-black  text-lg hover:bg-green-700 rounded-full p-2 ' : $page.props.auth.user.status == 'normal', 
-                                                    'bg-orange-400 text-black hover:bg-blue-600 rounded-full p-2' : $page.props.auth.user.status == 'in_triage',
-                                                    'bg-yellow-400 text-black hover:bg-yellow-600 rounded-full p-2 ' : $page.props.auth.user.status == 'in_quarantine',
-                                                    'bg-indigo-800 text-black hover:bg-indigo-700 rounded-full p-2' : $page.props.auth.user.status == 'in_antigen',
-                                                    'bg-red-800 text-black hover:bg-red-700 rounded-full p-2' : $page.props.auth.user.status == 'is_positive',
+                                                    'bg-green-400 text-black  text-lg hover:bg-green-400 rounded-full p-2 ' : $page.props.auth.user.status == 'normal', 
+                                                    'bg-orange-400 text-black hover:bg-blue-500 rounded-full p-2' : $page.props.auth.user.status == 'in_triage',
+                                                    'bg-yellow-400 text-black hover:bg-yellow-500 rounded-full p-2 ' : $page.props.auth.user.status == 'in_quarantine',
+                                                    'bg-indigo-500 text-black hover:bg-indigo-500 rounded-full p-2' : $page.props.auth.user.status == 'in_antigen',
+                                                    'bg-red-400 text-black hover:bg-red-500 rounded-full p-2' : $page.props.auth.user.status == 'is_positive',
                                                     }" 
                                                     > {{$page.props.auth.user.status}}</h5>
 

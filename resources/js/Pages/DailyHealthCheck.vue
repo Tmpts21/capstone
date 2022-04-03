@@ -1,12 +1,6 @@
 <template>
 <BreezeAuthenticatedLayout>
-    <template #header>
-            <h1 class="font-semibold text-3xl text-gray-800 leading-tight">
-                        Daily Health Check
-            </h1>
-
-            
-        </template>
+ 
  <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
   
             

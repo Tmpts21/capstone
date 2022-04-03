@@ -1,7 +1,7 @@
 <template>
 <BreezeAuthenticatedLayout>
-
-<section class="antialiased bg-gray-100 text-gray-600 h-screen px-4">
+ <br><br> 
+<section class="antialiased bg-gray-100 text-gray-600 h-screen px-4 mt-5 ">
     <div class="flex flex-col justify-center h-full">
 
         <div v-if="$page.props.flash.message" class="alert">

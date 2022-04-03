@@ -17,8 +17,6 @@ class DashboardController extends Controller
     }
 
     public function studentReports() { 
-
-       
         return Inertia::render('StudentReport',[
             'users' =>  User::query()
             ->when(\Request::input('search') , function ($query , $search) { 
@@ -31,7 +29,6 @@ class DashboardController extends Controller
             ->withQueryString(),
             'filters' => \Request::only(['search'])
         ]);
- 
     }
 
 
@@ -111,5 +108,45 @@ class DashboardController extends Controller
 
         return redirect('student_reports')->with('message','Successfully Updated');
 
+    }
+
+    public function users() { 
+        return Inertia::render('Users',[
+            'users' =>  User::query()
+            ->when(\Request::input('search') , function ($query , $search) { 
+                $query
+                ->where('name' , 'like' , "%{$search}%" )
+                ->orWhere('status' , 'like' , "%{$search}%" )
+                 ;
+            })
+            ->paginate(10)
+            ->withQueryString(),
+            'filters' => \Request::only(['search'])
+        ]);
+    }
+
+    public function disable_user($id) { 
+        $user = User::findorfail($id); 
+        $user->account_status = 0 ; 
+        $user->save(); 
+
+        return redirect('users')->with('message','Successfully Disabled');
+
+
+    }
+
+    public function enable_user($id) { 
+
+        $user = User::findorfail($id); 
+        $user->account_status = 0 ; 
+        $user->save(); 
+
+        return redirect('users')->with('message','Successfully Enabled');
+
+
+    }
+
+    public function create_user() { 
+        return Inertia::render('CreateUser');
     }
 }

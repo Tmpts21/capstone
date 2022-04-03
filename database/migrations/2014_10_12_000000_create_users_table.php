@@ -38,6 +38,7 @@ return new class extends Migration
 
             $table->string('status')->default('normal');
             $table->string('role')->default('student');
+            $table->boolean('account_status')->default(1);
 
             $table->string('tracing_log')->nullable();
 
