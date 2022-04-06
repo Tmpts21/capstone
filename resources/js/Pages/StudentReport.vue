@@ -26,10 +26,13 @@
                         <thead class="text-xs font-semibold uppercase text-gray-400 bg-gray-50">
                             <tr>
                                 <th class="p-2 whitespace-nowrap">
-                                    <div class="font-semibold text-left">Name</div>
+                                    <div class="font-semibold text-left ml-2 ">Name</div>
                                 </th>
                                 <th class="p-2 whitespace-nowrap">
-                                    <div class="font-semibold text-left">Status</div>
+                                    <div class="font-semibold text-center ml-2 ">Status</div>
+                                </th>
+                                 <th class="p-2 whitespace-nowrap">
+                                    <div class="font-semibold text-left ml-2 ">role</div>
                                 </th>
                                   <th class="p-2 whitespace-nowrap">
                                     <div class="font-semibold text-center">Action</div>
@@ -43,47 +46,34 @@
                                         <div class="font-medium text-gray-800">{{user.name}}</div>
                                     </div>
                                 </td>
-                                <td class="p-4 whitespace-nowrap ">
+                                <td class=" text-center whitespace-nowrap ">
                                     <div :class="{
-                                      'text-green-800' : user.status == 'normal', 
-                                      'text-orange-800' : user.status == 'in_triage',
-                                      'text-yellow-400 text-black' : user.status == 'in_quarantine',
-                                      'text-indigo-800' : user.status == 'in_antigen',
-                                      'text-red-800' : user.status == 'is_positive',
+                                      'bg-green-800' : user.status == 'normal', 
+                                      'bg-orange-800' : user.status == 'in_triage',
+                                      'bg-yellow-400 text-black' : user.status == 'in_quarantine',
+                                      'bg-indigo-800' : user.status == 'in_antigen',
+                                      'bg-red-800' : user.status == 'is_positive',
                                       }"  
-                                      v-if="!statuses.includes(user.status)" class="text-left text-green-800 font-bold ">{{user.status}}</div>
+                                      v-if="!statuses.includes(user.status)" class="text-white font-bold py-2 px-4 rounded-full">{{user.status}}</div>
                                     <div :class="{
-                                      'text-green-800' : user.status == 'normal', 
-                                      'text-orange-800' : user.status == 'in_triage',
-                                      'text-yellow-400 text-black' : user.status == 'in_quarantine',
-                                      'text-indigo-800' : user.status == 'in_antigen',
-                                      'text-red-800' : user.status == 'is_positive',
-                                      }" 
-                                       v-else class="text-left text-red-800 font-bold ">{{user.status}}</div>
-
-                                </td>
-                              <td class="p-4 whitespace-nowrap  ">
-                                    <div class="text-center">
-                                      <Link :class="{
-                                          'bg-green-800' : user.status == 'normal', 
-                                          'bg-orange-800' : user.status == 'in_triage',
-                                          'bg-yellow-400 text-black' : user.status == 'in_quarantine',
-                                          'bg-indigo-800' : user.status == 'in_antigen',
-                                          'bg-red-800' : user.status == 'is_positive',
-                                          }"  
-                                           v-if="!statuses.includes(user.status)" :href="route('student' , {id : user.id })" class="text-white font-bold py-2 px-4 rounded-full" v-html="'view'"
-                                          
-                                      />
-                                       <Link :class="{
                                       'bg-green-800' : user.status == 'normal', 
                                       'bg-orange-800' : user.status == 'in_triage',
                                       'bg-yellow-400 text-black' : user.status == 'in_quarantine',
                                       'bg-indigo-800' : user.status == 'in_antigen',
                                       'bg-red-800' : user.status == 'is_positive',
                                       }" 
-                                      v-else :href="route('student' , {id : user.id })" class=" text-white font-bold py-2 px-4 rounded-full" v-html="'view'"
-                                                                    
-                                      />
+                                       v-else class="text-white font-bold py-2 px-4 rounded-full">{{user.status}}
+                                    </div>
+
+                                </td>
+                                <td class="p-4 whitespace-nowrap ">
+                                    <div class="flex items-center">
+                                        <div class="font-medium text-gray-800 font-bold">{{user.role}}</div>
+                                    </div>
+                                </td>
+                              <td class="p-4 whitespace-nowrap  ">
+                                    <div class="text-center">
+                                      <Link :href="route('student' , {id : user.id })" class="text-white font-bold hover:bg-gray-300 bg-gray-500 py-2 px-4 rounded-full" v-html="'view'"/>
                                     </div>
                                 </td>
                              

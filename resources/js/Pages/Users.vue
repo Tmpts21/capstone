@@ -13,7 +13,7 @@
         <!-- Table -->
         <div class="w-full max-w-2xl mx-auto bg-white shadow-lg rounded-sm border border-gray-200">
             <div>
-                <small> <Link  :href="route('create_user')" class="mr-4 float-right mt-2   text-black bg-blue-800 hover:bg-blue-400 font-bold py-2 px-4 rounded-full" v-html="'Create User'"/></small> 
+                <small> <Link  :href="route('create_user')" class="mr-4 float-right mt-2   text-white bg-blue-800 hover:bg-blue-400 font-bold py-2 px-4 rounded-full" v-html="'Create User'"/></small> 
 
             </div>
              <br> <br>
@@ -36,6 +36,9 @@
                                     <div class="font-semibold text-left">Name</div>
                                 </th>
                                   <th class="p-2 whitespace-nowrap">
+                                    <div class="font-semibold text-left">Role</div>
+                                </th>
+                                  <th class="p-2 whitespace-nowrap">
                                     <div class="font-semibold text-center">Action</div>
                                 </th>
                             </tr>
@@ -45,6 +48,11 @@
                                 <td class="p-4 whitespace-nowrap ">
                                     <div class="flex items-center">
                                         <div class="font-medium text-gray-800">{{user.name}}</div>
+                                    </div>
+                                </td>
+                                <td class="p-4 whitespace-nowrap ">
+                                    <div class="flex items-center">
+                                        <div class="font-medium text-gray-800">{{user.role}}</div>
                                     </div>
                                 </td>
 

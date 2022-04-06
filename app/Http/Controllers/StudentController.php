@@ -7,18 +7,12 @@ use Inertia\Inertia;
 use App\Models\User;
 use Auth ;
 use Carbon\Carbon;
-use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Validation\Rules;
 
 
 
-class DashboardController extends Controller
+class StudentController extends Controller
 {
-    public function index() { 
-        return Inertia::render('Dashboard' , ['student' => Auth::user()]);
-    }
 
     public function studentReports() { 
         return Inertia::render('StudentReport',[
