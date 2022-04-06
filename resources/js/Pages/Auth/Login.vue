@@ -55,9 +55,6 @@ const submit = () => {
 
 
             <div class="flex items-center justify-end mt-4">
-                <Link  :href="'/dataprivacy'" class="underline text-sm text-gray-600 hover:text-gray-900">
-                    No account yet ? Register Here
-                </Link>
 
                 <BreezeButton class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
                     Log in

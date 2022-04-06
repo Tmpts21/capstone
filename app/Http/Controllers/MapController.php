@@ -23,12 +23,12 @@ class MapController extends Controller
 
       
         $brgys = array();
-        $c = array(); 
-
+        $coord = array(); 
         $studentStatuses = array() ;
+
         foreach($students as $student) {
             array_push($brgys , $student->barangay  );
-            array_push($c , [$student->latitude , $student->longitude] );
+            array_push($coord , [$student->latitude , $student->longitude] );
             array_push($studentStatuses , [$student->status , $student->barangay]);
         }
 
@@ -64,8 +64,8 @@ class MapController extends Controller
             
             $mapObject = (object)['barangay' => $key , 
                                     'student_count' => $value , 
-                                    'lat' => floatval($c[array_search($key , $brgys)][0]) ,
-                                    'long' =>  floatval($c[array_search($key , $brgys)][1]),
+                                    'lat' => floatval($coord[array_search($key , $brgys)][0]) ,
+                                    'long' =>  floatval($coord[array_search($key , $brgys)][1]),
                                     'normalCount' => $normal,
                                     'in_triage' => $in_triage,
                                     'in_quarantine' => $in_quarantine , 
