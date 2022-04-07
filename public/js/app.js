@@ -25124,6 +25124,7 @@ __webpack_require__.r(__webpack_exports__);
       password: '',
       avatar: '',
       password_confirmation: '',
+      role: '',
       terms: false
     });
 
@@ -27569,19 +27570,20 @@ var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 
 var _hoisted_12 = [_hoisted_9, _hoisted_10, _hoisted_11];
 var _hoisted_13 = {
-  "class": "grid grid-cols-2 gap-4"
-};
-var _hoisted_14 = {
   "class": "mt-4"
 };
-var _hoisted_15 = {
-  "class": "mt-4"
-};
-var _hoisted_16 = {
-  "class": "mt-4"
-};
+
+var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", null, "student", -1
+/* HOISTED */
+);
+
+var _hoisted_15 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", null, "admin", -1
+/* HOISTED */
+);
+
+var _hoisted_16 = [_hoisted_14, _hoisted_15];
 var _hoisted_17 = {
-  "class": "mt-4"
+  "class": "grid grid-cols-2 gap-4"
 };
 var _hoisted_18 = {
   "class": "mt-4"
@@ -27596,10 +27598,22 @@ var _hoisted_21 = {
   "class": "mt-4"
 };
 var _hoisted_22 = {
+  "class": "mt-4"
+};
+var _hoisted_23 = {
+  "class": "mt-4"
+};
+var _hoisted_24 = {
+  "class": "mt-4"
+};
+var _hoisted_25 = {
+  "class": "mt-4"
+};
+var _hoisted_26 = {
   "class": "flex items-center justify-end mt-4"
 };
 
-var _hoisted_23 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" create ");
+var _hoisted_27 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" create ");
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)($setup["BreezeAuthenticatedLayout"], null, {
@@ -27641,7 +27655,20 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         autocomplete: "gender"
       }, _hoisted_12, 512
       /* NEED_PATCH */
-      ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $setup.form.gender]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BreezeLabel"], {
+      ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $setup.form.gender]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BreezeLabel"], {
+        "for": "role",
+        value: "role"
+      }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+        "class": "block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500",
+        "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
+          return $setup.form.role = $event;
+        }),
+        required: "",
+        autofocus: "",
+        autocomplete: "role"
+      }, _hoisted_16, 512
+      /* NEED_PATCH */
+      ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $setup.form.role]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_17, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_18, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BreezeLabel"], {
         "for": "City",
         value: "City"
       }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BreezeInput"], {
@@ -27649,7 +27676,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         type: "text",
         "class": "mt-1 block w-full",
         modelValue: $setup.form.city,
-        "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
+        "onUpdate:modelValue": _cache[3] || (_cache[3] = function ($event) {
           return $setup.form.city = $event;
         }),
         required: "",
@@ -27657,7 +27684,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         autocomplete: "city"
       }, null, 8
       /* PROPS */
-      , ["modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BreezeLabel"], {
+      , ["modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_19, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BreezeLabel"], {
         "for": "barangay",
         value: "Barangay"
       }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BreezeInput"], {
@@ -27665,7 +27692,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         type: "text",
         "class": "mt-1 block w-full",
         modelValue: $setup.form.barangay,
-        "onUpdate:modelValue": _cache[3] || (_cache[3] = function ($event) {
+        "onUpdate:modelValue": _cache[4] || (_cache[4] = function ($event) {
           return $setup.form.barangay = $event;
         }),
         required: "",
@@ -27673,7 +27700,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         autocomplete: "barangay"
       }, null, 8
       /* PROPS */
-      , ["modelValue"])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_16, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BreezeLabel"], {
+      , ["modelValue"])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_20, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BreezeLabel"], {
         "for": "permanent",
         value: "Permanent Address"
       }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BreezeInput"], {
@@ -27681,7 +27708,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         type: "text",
         "class": "mt-1 block w-full",
         modelValue: $setup.form.permanent_address,
-        "onUpdate:modelValue": _cache[4] || (_cache[4] = function ($event) {
+        "onUpdate:modelValue": _cache[5] || (_cache[5] = function ($event) {
           return $setup.form.permanent_address = $event;
         }),
         required: "",
@@ -27689,7 +27716,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         autocomplete: "permanent_address"
       }, null, 8
       /* PROPS */
-      , ["modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_17, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BreezeLabel"], {
+      , ["modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_21, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BreezeLabel"], {
         "for": "present_address",
         value: "Present Address "
       }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BreezeInput"], {
@@ -27697,7 +27724,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         type: "text",
         "class": "mt-1 block w-full",
         modelValue: $setup.form.present_address,
-        "onUpdate:modelValue": _cache[5] || (_cache[5] = function ($event) {
+        "onUpdate:modelValue": _cache[6] || (_cache[6] = function ($event) {
           return $setup.form.present_address = $event;
         }),
         required: "",
@@ -27705,7 +27732,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         autocomplete: "present_address"
       }, null, 8
       /* PROPS */
-      , ["modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_18, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BreezeLabel"], {
+      , ["modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_22, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BreezeLabel"], {
         "for": "number",
         value: "Phone number"
       }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BreezeInput"], {
@@ -27713,7 +27740,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         type: "text",
         "class": "mt-1 block w-full",
         modelValue: $setup.form.phone_number,
-        "onUpdate:modelValue": _cache[6] || (_cache[6] = function ($event) {
+        "onUpdate:modelValue": _cache[7] || (_cache[7] = function ($event) {
           return $setup.form.phone_number = $event;
         }),
         required: "",
@@ -27721,7 +27748,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         autocomplete: "phone_number"
       }, null, 8
       /* PROPS */
-      , ["modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_19, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BreezeLabel"], {
+      , ["modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_23, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BreezeLabel"], {
         "for": "email",
         value: "Email"
       }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BreezeInput"], {
@@ -27729,14 +27756,14 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         type: "email",
         "class": "mt-1 block w-full",
         modelValue: $setup.form.email,
-        "onUpdate:modelValue": _cache[7] || (_cache[7] = function ($event) {
+        "onUpdate:modelValue": _cache[8] || (_cache[8] = function ($event) {
           return $setup.form.email = $event;
         }),
         required: "",
         autocomplete: "username"
       }, null, 8
       /* PROPS */
-      , ["modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_20, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BreezeLabel"], {
+      , ["modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_24, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BreezeLabel"], {
         "for": "password",
         value: "Password"
       }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BreezeInput"], {
@@ -27744,14 +27771,14 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         type: "password",
         "class": "mt-1 block w-full",
         modelValue: $setup.form.password,
-        "onUpdate:modelValue": _cache[8] || (_cache[8] = function ($event) {
+        "onUpdate:modelValue": _cache[9] || (_cache[9] = function ($event) {
           return $setup.form.password = $event;
         }),
         required: "",
         autocomplete: "new-password"
       }, null, 8
       /* PROPS */
-      , ["modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_21, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BreezeLabel"], {
+      , ["modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_25, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BreezeLabel"], {
         "for": "password_confirmation",
         value: "Confirm Password"
       }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BreezeInput"], {
@@ -27759,21 +27786,21 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         type: "password",
         "class": "mt-1 block w-full",
         modelValue: $setup.form.password_confirmation,
-        "onUpdate:modelValue": _cache[9] || (_cache[9] = function ($event) {
+        "onUpdate:modelValue": _cache[10] || (_cache[10] = function ($event) {
           return $setup.form.password_confirmation = $event;
         }),
         required: "",
         autocomplete: "new-password"
       }, null, 8
       /* PROPS */
-      , ["modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_22, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BreezeButton"], {
+      , ["modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_26, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BreezeButton"], {
         "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["ml-4", {
           'opacity-25': $setup.form.processing
         }]),
         disabled: $setup.form.processing
       }, {
         "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-          return [_hoisted_23];
+          return [_hoisted_27];
         }),
         _: 1
         /* STABLE */

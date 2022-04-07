@@ -82,6 +82,7 @@ $request->validate([
     $user = User::create([
         'name' => $request->name,
         'gender' => $request->gender,
+        'role' => $request->role,
         'city' => $request->city,
         'barangay' => $request->barangay,
         'present_address' => $request->present_address,
@@ -93,7 +94,6 @@ $request->validate([
         'password' => Hash::make($request->password),
     ]);
 
-    dump($user);
 
     return redirect('create_user')->with('message','User Successfully Created ');
     }
