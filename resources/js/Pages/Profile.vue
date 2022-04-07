@@ -12,9 +12,11 @@
         <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">
             <form @submit.prevent="submit">
                 <div class="flex flex-col sm:justify-center items-center pt-6 sm:pt-0 ">
-                        <img class="inline-block h-24 w-24 rounded-full ring-2 ring-white" :src="avatar" alt="">
+                
+                        <img v-if="avatar" class="inline-block h-24 w-24 rounded-full ring-2 ring-white" :src="avatar" alt="">
+
   <div class="mt-4">
-                <BreezeLabel for="image" value="Update 2x2 Picture" />
+                <BreezeLabel for="image" value="Add/Update Profile Picture" />
                 <BreezeInput id="profile_image" name="profile_image" type="file" class="mt-1 block w-full  block
                                                             w-full
                                                             px-3
@@ -45,10 +47,10 @@
             <div class="mt-4">
                 <BreezeLabel for="gender" value="gender" />
 
-                <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"  v-model="form.gender" required autofocus autocomplete="gender">
-                    <option>Male</option>
-                    <option>Female</option>
-                    <option>Other</option>
+                <select class="block  w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"  v-model="form.gender" required>
+                    <option>male</option>
+                    <option>female</option>
+                    <option>other</option>
                 </select>
             </div>
 
@@ -87,23 +89,18 @@
                 <BreezeInput id="email" type="email" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" v-model="form.email"  autocomplete="username" />
             </div>
 
-              <div class="mt-4 mb-4 ">
-                <label >Medical Assesment :  </label> 
+              <div class="mt-4 mb-4 text-center">
                     <a  v-if="medical_assesment" class="ml-5 bg-blue-800 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" :href="medical_assesment" target="_blank" alt=""> View Medical Assesment </a>
-                    <span v-else>  Not available </span>
         </div>
 
    <br>
 
-            <div class="mt-4 mb-2 ">
-                     <label >Vaccination Card :   </label> 
+            <div class="mt-4 mb-2 text-center ">
                      <a  v-if="vax_image" class="ml-5 bg-blue-800 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" :href="vax_image" target="_blank" alt=""> View Vaccination Card  </a>
-                    <span v-else> Not Available  </span>
-
             </div>
             
             <div class="mt-4">
-                <BreezeLabel for="vax_image" value="Update Vacciantion card" />
+                <BreezeLabel for="vax_image" value="Add/Update Vacciantion card" />
                 <BreezeInput id="vax_image" type="file" class="mt-1 block w-full  block
                                                             w-full
                                                             px-3
