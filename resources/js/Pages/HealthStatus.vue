@@ -129,7 +129,7 @@ export default {
             </div>
 
             <div class="flex items-center justify-end mt-4">
-                <BreezeButton class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+                <BreezeButton class="ml-4 mb-5 " :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
                  <i class="fas fa-save"> Save</i>  
                 </BreezeButton>
             </div>

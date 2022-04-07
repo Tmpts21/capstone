@@ -87,6 +87,7 @@ const showingNavigationDropdown = ref(false);
                                         <BreezeDropdownLink :href="route('profile')" method="get" as="button">
                                            profile
                                         </BreezeDropdownLink>
+                                      
                                         <BreezeDropdownLink :href="route('logout')" method="post" as="button">
                                             Log Out
                                         </BreezeDropdownLink>
@@ -118,16 +119,22 @@ const showingNavigationDropdown = ref(false);
 
                     <!-- Responsive Settings Options -->
                     <div class="pt-4 pb-1 border-t border-gray-200">
-                        <div class="px-4">
-                            <div class="font-medium text-base text-gray-800">{{ $page.props.auth.user.name }}</div>
-                            <div class="font-medium text-sm text-gray-500">{{ $page.props.auth.user.email }}</div>
-                        </div>
 
                         <div class="mt-3 space-y-1">
-                             <BreezeResponsiveNavLink :href="route('profile')" method="get" as="button">
+                             <BreezeResponsiveNavLink class="ml-3 bg-blue-800 text-white rounded-lg" :href="route('profile')" method="get" as="button">
                                 Profile
                             </BreezeResponsiveNavLink>
-                            <BreezeResponsiveNavLink :href="route('logout')" method="post" as="button">
+                            <BreezeResponsiveNavLink class="ml-3 bg-blue-800 text-white rounded-lg" :href="route('map')" method="get" as="button">
+                                           Interactive Map
+                            </BreezeResponsiveNavLink>
+                            <BreezeResponsiveNavLink class="ml-3 bg-blue-800 text-white rounded-lg" :href="route('health_check')" method="get" as="button">
+                                Daily Health Check
+                            </BreezeResponsiveNavLink>
+                                <BreezeResponsiveNavLink class="ml-3 bg-blue-800 text-white rounded-lg" :href="route('healthStatus')" method="get" as="button">
+                                Health Status 
+                            </BreezeResponsiveNavLink>
+                                         
+                            <BreezeResponsiveNavLink class="ml-3 bg-red-500 text-white rounded-lg" :href="route('logout')" method="post" as="button">
                                 Log Out
                             </BreezeResponsiveNavLink>
                         </div>
