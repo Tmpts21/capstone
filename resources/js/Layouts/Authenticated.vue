@@ -116,13 +116,12 @@ const showingNavigationDropdown = ref(false);
                     <!-- Responsive Settings Options -->
                     <div class="pt-4 pb-1 border-t border-gray-200">
 
-                        <div class="pt-2 pb-3 space-y-1">
+                       
+                        <div class="mt-3 space-y-1">
                             <BreezeResponsiveNavLink class="ml-3 bg-blue-800 text-white rounded-lg" :href="route('dashboard')" :active="route().current('dashboard')">
                                 Dashboard
                             </BreezeResponsiveNavLink>
-                        </div>
 
-                        <div class="mt-3 space-y-1">
                              <BreezeResponsiveNavLink class="ml-3 bg-blue-800 text-white rounded-lg" :href="route('profile')" method="get" as="button">
                                 Profile
                             </BreezeResponsiveNavLink>
