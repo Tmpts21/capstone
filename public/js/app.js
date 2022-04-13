@@ -26090,33 +26090,29 @@ var _hoisted_28 = {
   viewBox: "0 0 24 24"
 };
 var _hoisted_29 = {
-  "class": "pt-2 pb-3 space-y-1"
-};
-
-var _hoisted_30 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Dashboard ");
-
-var _hoisted_31 = {
   "class": "pt-4 pb-1 border-t border-gray-200"
 };
-var _hoisted_32 = {
+var _hoisted_30 = {
   "class": "mt-3 space-y-1"
 };
 
-var _hoisted_33 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Profile ");
+var _hoisted_31 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Dashboard ");
 
-var _hoisted_34 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Interactive Map ");
+var _hoisted_32 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Profile ");
 
-var _hoisted_35 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Daily Health Check ");
+var _hoisted_33 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Interactive Map ");
 
-var _hoisted_36 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Health Status ");
+var _hoisted_34 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Daily Health Check ");
 
-var _hoisted_37 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Log Out ");
+var _hoisted_35 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Health Status ");
 
-var _hoisted_38 = {
+var _hoisted_36 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Log Out ");
+
+var _hoisted_37 = {
   key: 0,
   "class": "bg-white shadow"
 };
-var _hoisted_39 = {
+var _hoisted_38 = {
   "class": "max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
@@ -26290,26 +26286,27 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       'block': $setup.showingNavigationDropdown,
       'hidden': !$setup.showingNavigationDropdown
     }, "sm:hidden"])
-  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_29, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BreezeResponsiveNavLink"], {
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Responsive Settings Options "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_29, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_30, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BreezeResponsiveNavLink"], {
+    "class": "ml-3 bg-blue-800 text-white rounded-lg",
     href: _ctx.route('dashboard'),
     active: _ctx.route().current('dashboard')
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_30];
+      return [_hoisted_31];
     }),
     _: 1
     /* STABLE */
 
   }, 8
   /* PROPS */
-  , ["href", "active"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Responsive Settings Options "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_31, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_32, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BreezeResponsiveNavLink"], {
+  , ["href", "active"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BreezeResponsiveNavLink"], {
     "class": "ml-3 bg-blue-800 text-white rounded-lg",
     href: _ctx.route('profile'),
     method: "get",
     as: "button"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_33];
+      return [_hoisted_32];
     }),
     _: 1
     /* STABLE */
@@ -26323,7 +26320,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     as: "button"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_34];
+      return [_hoisted_33];
     }),
     _: 1
     /* STABLE */
@@ -26337,7 +26334,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     as: "button"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_35];
+      return [_hoisted_34];
     }),
     _: 1
     /* STABLE */
@@ -26351,7 +26348,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     as: "button"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_36];
+      return [_hoisted_35];
     }),
     _: 1
     /* STABLE */
@@ -26365,7 +26362,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     as: "button"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_37];
+      return [_hoisted_36];
     }),
     _: 1
     /* STABLE */
@@ -26374,7 +26371,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* PROPS */
   , ["href"])])])], 2
   /* CLASS */
-  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Page Heading "), _ctx.$slots.header ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("header", _hoisted_38, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_39, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.renderSlot)(_ctx.$slots, "header")])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Page Content "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("main", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.renderSlot)(_ctx.$slots, "default")])])]);
+  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Page Heading "), _ctx.$slots.header ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("header", _hoisted_37, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_38, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.renderSlot)(_ctx.$slots, "header")])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Page Content "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("main", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.renderSlot)(_ctx.$slots, "default")])])]);
 }
 
 /***/ }),
@@ -27867,7 +27864,7 @@ var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 
 var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "class": "mt-2"
-}, "a. Fever (Lagnat) ", -1
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("a. Fever "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", null, "(Lagnat)")], -1
 /* HOISTED */
 );
 
@@ -27883,7 +27880,7 @@ var _hoisted_12 = [_hoisted_10, _hoisted_11];
 
 var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "class": "mt-2"
-}, "b. Cough and/or Colds (Ubo at/o Sipon) ", -1
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("b. Cough and/or Colds> "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", null, "(Ubo at/o Sipon)")], -1
 /* HOISTED */
 );
 
@@ -27899,7 +27896,7 @@ var _hoisted_16 = [_hoisted_14, _hoisted_15];
 
 var _hoisted_17 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "class": "mt-2"
-}, "c. Body pains (Pananakit ng katawan) ", -1
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("c. Body pains "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", null, "(Pananakit ng katawan)")], -1
 /* HOISTED */
 );
 
@@ -27915,7 +27912,7 @@ var _hoisted_20 = [_hoisted_18, _hoisted_19];
 
 var _hoisted_21 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "class": "mt-2"
-}, "d. Sore Throat (Pananakit o pamamaga ng lalamunan) ", -1
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("d. Sore Throat "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", null, "(Pananakit o pamamaga ng lalamunan)")], -1
 /* HOISTED */
 );
 
@@ -27931,7 +27928,7 @@ var _hoisted_24 = [_hoisted_22, _hoisted_23];
 
 var _hoisted_25 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "class": "mt-2"
-}, "e. Fatigue/Tiredness (Pagkapagod) ", -1
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("e. Fatigue/Tiredness "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", null, "(Pagkapagod)")], -1
 /* HOISTED */
 );
 
@@ -27947,7 +27944,7 @@ var _hoisted_28 = [_hoisted_26, _hoisted_27];
 
 var _hoisted_29 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "class": "mt-2"
-}, "f. Headache (Pananakit ng ulo) ", -1
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("f. Headache "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", null, "(Pananakit ng ulo)")], -1
 /* HOISTED */
 );
 
@@ -27963,7 +27960,7 @@ var _hoisted_32 = [_hoisted_30, _hoisted_31];
 
 var _hoisted_33 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "class": "mt-2"
-}, "g. Diarrhea (Pagtatae) ", -1
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("g. Diarrhea "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", null, "(Pagtatae)")], -1
 /* HOISTED */
 );
 
@@ -27979,7 +27976,7 @@ var _hoisted_36 = [_hoisted_34, _hoisted_35];
 
 var _hoisted_37 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "class": "mt-2"
-}, "h. Loss of taste or smell (Nawalan ng panlasa o pang-amoy) ", -1
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("h. Loss of taste or smell "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", null, "(Nawalan ng panlasa o pang-amoy)")], -1
 /* HOISTED */
 );
 
@@ -27995,7 +27992,7 @@ var _hoisted_40 = [_hoisted_38, _hoisted_39];
 
 var _hoisted_41 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "class": "mt-2"
-}, "i. Difficulty of breathing (Pagkahapo o hirap sa pag hinga) ", -1
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("i. Difficulty of breathing "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", null, "(Pagkahapo o hirap sa pag hinga)")], -1
 /* HOISTED */
 );
 
@@ -28011,7 +28008,7 @@ var _hoisted_44 = [_hoisted_42, _hoisted_43];
 
 var _hoisted_45 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "class": "mt-2"
-}, "2. Have you had face-to-face contact with a probable or confirmed COVID-19 case within 1 meter and for more than 15 minutes for the past 14 days? (May nakasalamuha ka ba na maaaring o kumpirmadong pasyente na may COV/D-19 mu/a sa isang metrong distansya or mas malapit pa at tumagal ng mahigit 15 minuto sa nakalipas na 14 araw?)", -1
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("2. Have you had face-to-face contact with a probable or confirmed COVID-19 case within 1 meter and for more than 15 minutes for the past 14 days? "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", null, "(May nakasalamuha ka ba na maaaring o kumpirmadong pasyente na may COV/D-19 mu/a sa isang metrong distansya or mas malapit pa at tumagal ng mahigit 15 minuto sa nakalipas na 14 araw?) ")], -1
 /* HOISTED */
 );
 
@@ -28027,7 +28024,7 @@ var _hoisted_48 = [_hoisted_46, _hoisted_47];
 
 var _hoisted_49 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "class": "mt-2"
-}, "3. Have you provided direct care for a patient with probable or confirmed COVI-19 case without using proper \"Personal Protective Equipment (PPE)\" for the past 14 days? (Nagalaga ka ba ng maaring o kumpirmadong pasyente na may COV/D-19 ng hindi nakasuot ng tamang PPE (Personal Protective Equipment) sa nakalipas na 14 araw?)", -1
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("3. Have you provided direct care for a patient with probable or confirmed COVI-19 case without using proper \"Personal Protective Equipment (PPE)\" for the past 14 days? "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", null, "(Nagalaga ka ba ng maaring o kumpirmadong pasyente na may COV/D-19 ng hindi nakasuot ng tamang PPE (Personal Protective Equipment) sa nakalipas na 14 araw?)")], -1
 /* HOISTED */
 );
 
@@ -28043,7 +28040,7 @@ var _hoisted_52 = [_hoisted_50, _hoisted_51];
 
 var _hoisted_53 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "class": "mt-2"
-}, "4. Have you traveled outside the Philippines in the last 14 days? {lkaw ba ay nagbiyahe sa labas ng Pilipinas sa nakalipas na 14 na araw?) ", -1
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("4. Have you traveled outside the Philippines in the last 14 days? "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", null, "(lkaw ba ay nagbiyahe sa labas ng Pilipinas sa nakalipas na 14 na araw?)")], -1
 /* HOISTED */
 );
 
@@ -28059,7 +28056,7 @@ var _hoisted_56 = [_hoisted_54, _hoisted_55];
 
 var _hoisted_57 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "class": "mt-2"
-}, "5. Have you traveled outside the current city/municipality where you reside?", -1
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("5. Have you traveled outside the current city/municipality where you reside? "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", null, "(Ikaw ba ay bumyahe sa labas ng iyong lungsod o munisipalidad)")], -1
 /* HOISTED */
 );
 
@@ -28453,10 +28450,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  "class": "bg-gradient-to-r from-purple-300 to-blue-200"
+  "class": "bg-blue-300"
 };
 
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"w-9/12 m-auto py-16 min-h-screen flex items-center justify-center\"><div class=\"bg-white shadow overflow-hidden sm:rounded-lg pb-8\"><div class=\"border-t border-gray-200 text-center pt-8\"><h1 class=\"text-9xl font-bold text-purple-400\">403</h1><p class=\"text-2xl pb-8 px-12 font-medium\">Oops! Looks like your Account has been Disabled Pls contact your Administrator </p></div></div></div>", 1);
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"w-9/12 m-auto py-16 min-h-screen flex items-center justify-center\"><div class=\"bg-white shadow overflow-hidden sm:rounded-lg pb-8\"><div class=\"border-t border-gray-200 text-center pt-8\"><h1 class=\"text-9xl font-bold text-blue-500\">403</h1><p class=\"text-2xl pb-8 px-12 font-medium\">Oops! Looks like your Account has been Disabled Pls contact your Administrator </p></div></div></div>", 1);
 
 var _hoisted_3 = [_hoisted_2];
 function render(_ctx, _cache) {
@@ -28588,7 +28585,7 @@ var _hoisted_29 = {
 
 var _hoisted_30 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
   "class": "font-normal text-black-800 dark:text-gray-400"
-}, "Looks like you are in health is normal. Thank you for keeping youself healthy in this difficult times.", -1
+}, "Looks like your health is in normal condition. Thank you for keeping youself healthy in this difficult times.", -1
 /* HOISTED */
 );
 
@@ -28738,7 +28735,7 @@ var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
   role: "alert"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
   "class": "fa-solid fa-circle-info text-lg"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" In this interactive map you can locate if there is a high risk level of covid 19. In this map it is show the number of studentsin each barangay. The map also shows the covid 19 data of the barangay ")])], -1
+}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" In this interactive map you can locate if there is a high risk level of covid 19. In this map it is show the number of students in each barangay. The map also shows the covid 19 data of the barangay ")])], -1
 /* HOISTED */
 );
 
@@ -29215,7 +29212,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       /* PROPS */
       , _hoisted_28)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_29, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_BreezeLabel, {
         "for": "vax_image",
-        value: "Add/Update Vacciantion card"
+        value: "Add/Update Vaccination card"
       }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_BreezeInput, {
         id: "vax_image",
         type: "file",

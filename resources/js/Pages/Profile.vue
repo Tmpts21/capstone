@@ -100,7 +100,7 @@
             </div>
             
             <div class="mt-4">
-                <BreezeLabel for="vax_image" value="Add/Update Vacciantion card" />
+                <BreezeLabel for="vax_image" value="Add/Update Vaccination card" />
                 <BreezeInput id="vax_image" type="file" class="mt-1 block w-full  block
                                                             w-full
                                                             px-3

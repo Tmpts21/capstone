@@ -37,7 +37,13 @@ class UserController extends Controller
         $user->account_status = 0 ; 
         $user->save(); 
 
-        return redirect('users')->with('message','Successfully Disabled');
+        if($user->id == Auth::user()->id) { 
+            session()->flush();
+
+            return redirect("/login");
+        }
+
+        return redirect('users')->with('message','User Successfully Disabled');
 
 
     }
@@ -48,7 +54,7 @@ class UserController extends Controller
         $user->account_status = 1 ; 
         $user->save(); 
 
-        return redirect('users')->with('message','Successfully Enabled');
+        return redirect('users')->with('message','User Successfully Enabled');
 
 
     }
@@ -99,3 +105,4 @@ $request->validate([
     }
 
 }
+

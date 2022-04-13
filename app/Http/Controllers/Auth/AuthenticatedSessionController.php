@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Models\User;
 
 class AuthenticatedSessionController extends Controller
 {
@@ -32,7 +33,16 @@ class AuthenticatedSessionController extends Controller
      * @return \Illuminate\Http\RedirectResponse
      */
     public function store(LoginRequest $request)
-    {
+    {       
+
+        $user = User::where('email' , $request->email)->first(); 
+
+        if ($user) { 
+            if($user->account_status == 0 ) { 
+                return Inertia::render("DisablePage");
+            }
+        }
+
         $request->authenticate();
 
         $request->session()->regenerate();

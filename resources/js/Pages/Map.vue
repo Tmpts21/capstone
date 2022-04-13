@@ -3,7 +3,7 @@
   <template #header>    
                <div class="mx-20 h-50 w-50 bg-green-100  border-green-500 text-green-700 p-5" role="alert" >
                     <p> <i class="fa-solid fa-circle-info text-lg "></i> In this interactive map you can locate if there is a high risk level of covid 19. 
-                        In this map it is show the number of studentsin each barangay. The map also shows the covid 19 data of the barangay </p>
+                        In this map it is show the number of students in each barangay. The map also shows the covid 19 data of the barangay </p>
                 </div>
 
             

@@ -20,42 +20,42 @@
                ng mga sumusunod na sintomas sa nakaraang 14 na araw?</p>
                <br>
             <div>
-                <label class='mt-2'>a. Fever (Lagnat)  </label>
+                <label class='mt-2'>a. Fever <i>(Lagnat)</i>  </label>
                 <select class="mt-2 mb-2  block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"  v-model="form.a" required autofocus autocomplete="gender">
                     <option>yes </option>
                     <option>no</option>
                 </select>        
             </div>
             <div>
-                <label class='mt-2'>b. Cough and/or Colds (Ubo at/o Sipon) </label>
+                <label class='mt-2'>b. Cough and/or Colds> <i>(Ubo at/o Sipon)</i> </label>
                 <select class="mt-2 mb-2  block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"  v-model="form.b" required autofocus autocomplete="gender">
                     <option>yes </option>
                     <option>no</option>
                 </select>        
             </div>
               <div>
-                <label class='mt-2'>c. Body pains (Pananakit ng katawan) </label>
+                <label class='mt-2'>c. Body pains <i>(Pananakit ng katawan)</i> </label>
                 <select class="block mt-2 mb-2   appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"  v-model="form.c" required autofocus autocomplete="gender">
                     <option>yes </option>
                     <option>no</option>
                 </select>        
             </div>
               <div>
-                <label class='mt-2'>d. Sore Throat (Pananakit o pamamaga ng lalamunan)  </label>
+                <label class='mt-2'>d. Sore Throat <i>(Pananakit o pamamaga ng lalamunan)</i>  </label>
                 <select class="block mb-2 mt-2   appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"  v-model="form.d" required autofocus autocomplete="gender">
                     <option>yes </option>
                     <option>no</option>
                 </select>        
             </div>
               <div>
-                <label class='mt-2'>e. Fatigue/Tiredness (Pagkapagod)  </label>
+                <label class='mt-2'>e. Fatigue/Tiredness <i>(Pagkapagod)</i>  </label>
                 <select class="block mb-2 mt-2  appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"  v-model="form.e" required autofocus autocomplete="gender">
                     <option>yes </option>
                     <option>no</option>
                 </select>        
             </div>
             <div>
-                <label class='mt-2'>f. Headache (Pananakit ng ulo)  </label>
+                <label class='mt-2'>f. Headache <i>(Pananakit ng ulo)</i>  </label>
                 <select class="block mb-2  mt-2  appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"  v-model="form.f" required autofocus autocomplete="gender">
                     <option>yes </option>
                     <option>no</option>
@@ -63,21 +63,21 @@
             </div>
 
             <div>
-                <label class='mt-2'>g. Diarrhea (Pagtatae)  </label>
+                <label class='mt-2'>g. Diarrhea <i>(Pagtatae)</i>  </label>
                 <select class="block mb-2  mt-2  appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"  v-model="form.g" required autofocus autocomplete="gender">
                     <option>yes </option>
                     <option>no</option>
                 </select>        
             </div>
             <div>
-                <label class='mt-2'>h. Loss of taste or smell (Nawalan ng panlasa o pang-amoy)  </label>
+                <label class='mt-2'>h. Loss of taste or smell <i>(Nawalan ng panlasa o pang-amoy)</i>  </label>
                 <select class="block mt-2 mb-2  appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"  v-model="form.h" required autofocus autocomplete="gender">
                     <option>yes </option>
                     <option>no</option>
                 </select>        
             </div>
              <div>
-                <label class='mt-2'>i. Difficulty of breathing (Pagkahapo o hirap sa pag hinga)  </label>
+                <label class='mt-2'>i. Difficulty of breathing <i>(Pagkahapo o hirap sa pag hinga)</i>  </label>
                 <select class="block mt-2 mb-2 appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"  v-model="form.i" required autofocus autocomplete="gender">
                     <option>yes </option>
                     <option>no</option>
@@ -87,8 +87,8 @@
        
 
               <div>
-                <label class='mt-2'>2. Have you had face-to-face contact with a probable or confirmed COVID-19 case within 1 meter and for more than 15 minutes for the past 14 days? (May nakasalamuha ka ba na maaaring o kumpirmadong pasyente na may COV/D-19 mu/a sa isang metrong 
-                  distansya or mas malapit pa at tumagal ng mahigit 15 minuto sa nakalipas na 14 araw?)</label>
+                <label class='mt-2'>2. Have you had face-to-face contact with a probable or confirmed COVID-19 case within 1 meter and for more than 15 minutes for the past 14 days? <i>(May nakasalamuha ka ba na maaaring o kumpirmadong pasyente na may COV/D-19 mu/a sa isang metrong 
+                  distansya or mas malapit pa at tumagal ng mahigit 15 minuto sa nakalipas na 14 araw?) </i></label>
                 <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"  v-model="form.one" required autofocus autocomplete="gender">
                     <option>yes </option>
                     <option>no</option>
@@ -96,8 +96,8 @@
             </div>
 
                 <div>
-                <label class='mt-2'>3. Have you provided direct care for a patient with probable or confirmed COVI-19 case without using proper "Personal Protective Equipment (PPE)" for the past 14 days? (Nagalaga ka ba ng maaring o kumpirmadong pasyente na may COV/D-19 ng 
-                  hindi nakasuot ng tamang PPE (Personal Protective Equipment) sa nakalipas na 14 araw?)</label>
+                <label class='mt-2'>3. Have you provided direct care for a patient with probable or confirmed COVI-19 case without using proper "Personal Protective Equipment (PPE)" for the past 14 days? <i>(Nagalaga ka ba ng maaring o kumpirmadong pasyente na may COV/D-19 ng 
+                  hindi nakasuot ng tamang PPE (Personal Protective Equipment) sa nakalipas na 14 araw?)</i></label>
                 <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"  v-model="form.two" required autofocus autocomplete="gender">
                     <option>yes </option>
                     <option>no</option>
@@ -105,7 +105,7 @@
             </div>
 
                  <div>
-                <label class='mt-2'>4. Have you traveled outside the Philippines in the last 14 days? {lkaw ba ay nagbiyahe sa labas ng Pilipinas sa nakalipas na 14 na araw?) </label>
+                <label class='mt-2'>4. Have you traveled outside the Philippines in the last 14 days? <i>(lkaw ba ay nagbiyahe sa labas ng Pilipinas sa nakalipas na 14 na araw?)</i> </label>
                 <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"  v-model="form.three" required autofocus autocomplete="gender">
                     <option>yes </option>
                     <option>no</option>
@@ -113,7 +113,7 @@
             </div>
 
                  <div>
-                <label class='mt-2'>5. Have you traveled outside the current city/municipality where you reside?</label>
+                <label class='mt-2'>5. Have you traveled outside the current city/municipality where you reside? <i>(Ikaw ba ay bumyahe sa labas ng iyong lungsod o munisipalidad)</i></label>
                 <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"  v-model="form.four" required autofocus autocomplete="gender">
                     <option>yes </option>
                     <option>no</option>

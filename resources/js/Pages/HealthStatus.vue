@@ -94,7 +94,7 @@ export default {
         <p class="font-normal text-black-800 dark:text-gray-400">This student is required for Antigen Testing. The school nurse will perform Antigen testing (learners with signed parent’s/guardian’s consent)</p>
     </div>
      <div v-if="$page.props.auth.user.status == 'normal' ">
-        <p class="font-normal text-black-800 dark:text-gray-400">Looks like you are in health is normal. Thank you for keeping youself healthy in this difficult times.</p>
+        <p class="font-normal text-black-800 dark:text-gray-400">Looks like your health is in normal condition. Thank you for keeping youself healthy in this difficult times.</p>
     </div>
         </div>
 
