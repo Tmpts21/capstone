@@ -1,4 +1,6 @@
 <template>
+    <Head title="Student/Employee Reports " />
+
 <BreezeAuthenticatedLayout>
  <br><br> 
 <section class="antialiased bg-gray-100 text-gray-600 h-screen px-4 mt-5 ">
@@ -14,7 +16,7 @@
 
             <header class="px-5 py-4 border-b border-gray-100">
               <div class="flex justify-between">
-                <h1 class="font-semibold text-blue-800 text-lg mt-3">Students Status Report </h1>
+                <h1 class="font-semibold text-blue-800 text-lg mt-3">Students/Employee Status Report </h1>
                 <input type="text" class="rounded" placeholder="Search..... " v-model="search">
 
               </div>
@@ -117,12 +119,13 @@
 import { Inertia } from '@inertiajs/inertia'
 import {ref , watch } from 'vue';
 import BreezeAuthenticatedLayout from '@/Layouts/Authenticated.vue';
-import { Link, useForm } from '@inertiajs/inertia-vue3';
+import { Link, useForm , Head} from '@inertiajs/inertia-vue3';
 export default {
   props : ['users','filters'],
   components : { 
       BreezeAuthenticatedLayout,
-      Link
+      Link,
+      Head
   },
 
   setup (props) { 

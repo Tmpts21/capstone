@@ -5,6 +5,7 @@ export default {
   props : ['student'],
   components : { 
     BreezeAuthenticatedLayout,
+    Head
   },
   setup (props) {
 

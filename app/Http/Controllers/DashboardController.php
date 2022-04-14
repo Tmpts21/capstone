@@ -114,4 +114,14 @@ class DashboardController extends Controller
 
     }
 
+    public function update_data_privacy () { 
+
+        $user = User::find(Auth::user()->id); 
+        $user->data_privacy = 1 ; 
+        $user->save(); 
+
+        return redirect()->back(); 
+        
+    }
+
 }

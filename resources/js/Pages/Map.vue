@@ -1,4 +1,6 @@
 <template>
+    <Head title="Interactive Map " />
+
 <BreezeAuthenticatedLayout>
   <template #header>    
                <div class="mx-20 h-50 w-50 bg-green-100  border-green-500 text-green-700 p-5" role="alert" >
@@ -23,8 +25,8 @@
   
   
  <GMapMap
-      :center="{lat: parseFloat(user.latitude), lng: parseFloat(user.longitude)}"
-      :zoom="10"
+      :center="{lat: 14.9660, lng: 120.9550}"
+      :zoom="7"
       map-type-id="terrain"
       class="h-screen"
   >
@@ -104,6 +106,7 @@ export default {
   props : ['mapData' ,'user'],
   components : { 
       BreezeAuthenticatedLayout,
+      Head
   },
 
   setup (props) { 

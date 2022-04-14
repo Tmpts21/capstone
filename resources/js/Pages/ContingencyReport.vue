@@ -1,4 +1,6 @@
 <template>
+    <Head title="Contingency Report " />
+
 <BreezeAuthenticatedLayout>
   <template #header>
             <h1 class="font-semibold text-3xl text-gray-800 leading-tight">
@@ -94,6 +96,7 @@ export default {
   props : ['status' , 'name' ,'id' , 'rem_days'],
   components : { 
       BreezeAuthenticatedLayout,
+      Head
   },
 
   setup (props) { 

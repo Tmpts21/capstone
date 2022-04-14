@@ -16,7 +16,7 @@ class StudentController extends Controller
 
     public function studentReports() { 
         return Inertia::render('StudentReport',[
-            'users' =>  User::query()
+            'users' =>  User::query()->where('account_status' , 1 )
             ->when(\Request::input('search') , function ($query , $search) { 
                 $query
                 ->where('name' , 'like' , "%{$search}%" )

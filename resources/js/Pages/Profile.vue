@@ -1,4 +1,6 @@
 <template>
+    <Head title="Profile " />
+
 <BreezeAuthenticatedLayout>
  <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
      <br><br>
@@ -153,6 +155,7 @@ export default {
     Link,
     BreezeAuthenticatedLayout,
     BreezeValidationErrors,
+    Head
   },
   setup (props) {
    const form = useForm({

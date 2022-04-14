@@ -1,4 +1,6 @@
 <template>
+    <Head title="Student/Employee " />
+
 <BreezeAuthenticatedLayout>
  <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
      <br><br>
@@ -32,7 +34,7 @@
                                           'bg-indigo-800' : student.status == 'in_antigen',
                                           'bg-red-800' : student.status == 'is_positive',
                                           }"   
-                                          v-else-if="student.status == 'normal' " class="ml-5 text-white font-bold py-2 px-4 rounded-full" target="_blank" alt=""> Student is in Healthy Condition <i class="fa-solid fa-face-smile"></i>  </div>
+                                          v-else-if="student.status == 'normal' " class="ml-5 text-white font-bold py-2 px-4 rounded-full" target="_blank" alt=""> Healthy Condition <i class="fa-solid fa-face-smile"></i>  </div>
                      
                         <br>
                         <img v-if="avatar" class="inline-block h-24 w-24 rounded-full ring-2 ring-white" :src="avatar"  alt="">
@@ -109,13 +111,13 @@
             <div class="mt-4">
                         <label >Contract Tracing Log </label> 
                         <a  v-if="tracing_log" class="ml-5 bg-blue-800 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" :href="tracing_log" target="_blank"  alt=""> View tracing Log </a>
-                        <span v-else > :  Student Has no Tracing Log yet </span>
+                        <span v-else > :  Not Available </span>
             </div>
 
          <div class="mt-4">
                 <label >Medical Assesment  </label> 
                     <a  v-if="medical_assesment" class="ml-5 bg-blue-800 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" :href="medical_assesment" target="_blank" alt=""> View Medical Assesment </a>
-                    <span v-else> : Medical Assesment not available </span>
+                    <span v-else> : Not Available </span>
         </div>
             <div class="mt-6">
                  <form @submit.prevent="submit(student.id)">
@@ -184,7 +186,8 @@ export default {
   components : { 
     Link,
     BreezeAuthenticatedLayout,
-    BreezeButton
+    BreezeButton,
+    Head
     
   },
   setup (props) {

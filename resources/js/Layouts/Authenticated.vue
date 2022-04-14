@@ -46,7 +46,7 @@ const showingNavigationDropdown = ref(false);
 
                                  <BreezeNavLink v-if="$page.props.auth.user.role =='admin'" :href="route('student_reports')" :active="route().current('student_reports')" >
                                      <i class="fa-solid fa-table text-blue-800 mr-2 text-lg "></i>             
-                               Student Report 
+                               Student/Employee Report 
                                 </BreezeNavLink>
 
                                 <BreezeNavLink v-if="$page.props.auth.user.role =='admin'" :href="route('users')" :active="route().current('users')" >

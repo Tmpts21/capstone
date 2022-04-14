@@ -11,7 +11,7 @@ class MapController extends Controller
 {
     public function index () { 
 
-        $data = $this->handleMapData(User::all()); 
+        $data = $this->handleMapData(User::where('account_status', 1 )->get()); 
 
         return Inertia::render('Map',[
             'mapData' => $data ,

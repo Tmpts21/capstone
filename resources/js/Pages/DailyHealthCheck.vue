@@ -1,4 +1,6 @@
 <template>
+<Head title="Daily Health Check " />
+
 <BreezeAuthenticatedLayout>
  
  <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
@@ -27,7 +29,7 @@
                 </select>        
             </div>
             <div>
-                <label class='mt-2'>b. Cough and/or Colds> <i>(Ubo at/o Sipon)</i> </label>
+                <label class='mt-2'>b. Cough and/or Colds <i>(Ubo at/o Sipon)</i> </label>
                 <select class="mt-2 mb-2  block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"  v-model="form.b" required autofocus autocomplete="gender">
                     <option>yes </option>
                     <option>no</option>
@@ -157,6 +159,7 @@ export default {
     Link,
     BreezeAuthenticatedLayout,
     BreezeValidationErrors,
+    Head
   },
   setup (props) {
    const form = useForm({

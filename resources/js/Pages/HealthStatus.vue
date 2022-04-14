@@ -99,10 +99,12 @@ export default {
         </div>
 
     </div>
+
+    
   <div v-if="tracing_log"  class="min-h-full flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
         <br>
-        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Contract Tracing log </h5>
-        <br>
+        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Contact Tracing log </h5>
+      
             <iframe class="w-9/12 h-screen" :src="tracing_log"></iframe>
     </div>
 
@@ -110,7 +112,12 @@ export default {
  <form @submit.prevent="submit">
         <div class="flex flex-col sm:justify-center items-center pt-6 sm:pt-0 ">
             <div class="mt-4">
-                <label for="tracing_log" > Update/Insert Contract Tracing log </label>
+                  <small>download 
+                        <a class="text-blue-800 font-bold text-xl" href="https://docs.google.com/document/d/1_fg9VR6Wet3adrpajjnoBkp98AhL2NFP/edit?rtpof=true&sd=true&fbclid=IwAR2h2Hz2_si2fle3D4MuZymmLOxrQCSidd0RpvA_j3D-zZx4mhjODkF37Ug"><i>Here</i></a> and edit the template for contact tracing log 
+                    </small>
+                       <br><br>
+
+                <label for="tracing_log" > Update/Insert Contact Tracing log </label>
                 <input id="tracing_log" type="file" class="mt-1 block w-full  block
                                                             w-full
                                                             px-3

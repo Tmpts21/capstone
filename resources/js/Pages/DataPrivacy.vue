@@ -1,9 +1,24 @@
-<script setup>
-import {Link } from '@inertiajs/inertia-vue3';
+<script>
+import { Inertia } from '@inertiajs/inertia'
+import { Head } from '@inertiajs/inertia-vue3';
+
+export default {
+  setup () {
+      
+      function updateDataPrivacy() { 
+        return Inertia.post('/update_data_privacy')
+    }
+
+    return {updateDataPrivacy}
+}
+
+}
 
 </script>
 
 <template>
+    <Head title="Dashboard" />
+
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
@@ -33,9 +48,9 @@ import {Link } from '@inertiajs/inertia-vue3';
                             indemnified in case of damages pursuant to the provisions of Republic Act No. 10173 of the Philippines otherwise known as the 
                             Data Privacy Act of 2012 and its corresponding implementing Rules and Regulations.
 <br> <br> 
-                            <Link :href="'/register'" class="bg-blue-800 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                            <button @click="updateDataPrivacy" class="bg-blue-800 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                                 Agree and Continue 
-                            </Link>
+                            </button>
              
                     </div>
                 </div>
