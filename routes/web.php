@@ -34,6 +34,10 @@ Route::get('/', function () {
     ]);
 });
 
+
+Route::get('/dataprivacy', function () {
+    return Inertia::render('DataPrivacy');
+
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified' , 'dataPrivacy'])->name('dashboard');
 
 
@@ -81,6 +85,7 @@ Route::get('/map', [MapController::class, 'index'])->middleware(['auth', 'verifi
 
  Route::post('update_data_privacy', [DashboardController::class, 'update_data_privacy'])->middleware(['auth', 'verified', 'isUserEnabled'])->name('update_data_privacy');
 
+ 
  
 
 // Student Routes 
