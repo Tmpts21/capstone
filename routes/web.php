@@ -37,6 +37,7 @@ Route::get('/', function () {
 
 Route::get('/dataprivacy', function () {
     return Inertia::render('DataPrivacy');
+});
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified' , 'dataPrivacy'])->name('dashboard');
 
