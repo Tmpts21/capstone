@@ -16,8 +16,8 @@ class DataPrivacyMiddleware
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
     public function handle(Request $request, Closure $next)
-    {
-        if (Auth::user()->data_privacy != 1 ) {
+    {   
+        if (Auth::user()->data_privacy == 0 ) {
             return Inertia::render('DataPrivacy');
         }
         return $next($request);
