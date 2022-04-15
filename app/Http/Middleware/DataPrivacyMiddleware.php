@@ -17,9 +17,10 @@ class DataPrivacyMiddleware
      */
     public function handle(Request $request, Closure $next)
     {   
-        if (Auth::user()->data_privacy == 0 ) {
-            return Inertia::render('DataPrivacy');
+        if (Auth::user() && Auth::user()->data_privacy != 0 ) {
+            return $next($request);
         }
-        return $next($request);
+        return Inertia::render('DataPrivacy');
+
     }
 }
