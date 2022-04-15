@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Auth ;
-class DataPrivacyMiddleware
+class DataPrivacy
 {
     /**
      * Handle an incoming request.
