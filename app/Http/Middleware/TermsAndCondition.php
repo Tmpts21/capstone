@@ -2,11 +2,12 @@
 
 namespace App\Http\Middleware;
 
+use Illuminate\Support\Facades\Auth;
 use Closure;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
-use Auth ;
-class DataPrivacy
+
+class TermsAndCondition
 {
     /**
      * Handle an incoming request.
@@ -16,11 +17,12 @@ class DataPrivacy
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
     public function handle(Request $request, Closure $next)
-    {   
-        if (Auth::user() && Auth::user()->data_privacy == 1  ) {
+    {
+
+        if (Auth::user() &&  Auth::user()->data_privacy == 1) {
             return $next($request);
         }
-        return Inertia::render('DataPrivacy');
 
+        return Inertia::render('DataPrivacy');
     }
 }
