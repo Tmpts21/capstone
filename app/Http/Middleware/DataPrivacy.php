@@ -17,7 +17,7 @@ class DataPrivacy
      */
     public function handle(Request $request, Closure $next)
     {   
-        if (Auth::user() && Auth::user()->data_privacy != 0 ) {
+        if (Auth::user() && Auth::user()->data_privacy == 1  ) {
             return $next($request);
         }
         return Inertia::render('DataPrivacy');

@@ -35,48 +35,48 @@ Route::get('/', function () {
 });
 
 
-Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified' , 'dataprivacy'])->name('dashboard');
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified' , 'DataPrivacy'])->name('dashboard');
 
 
 
-Route::get('/map', [MapController::class, 'index'])->middleware(['auth', 'verified' ,'isUserEnabled' ,'dataprivacy'])->name('map');
+Route::get('/map', [MapController::class, 'index'])->middleware(['auth', 'verified' ,'isUserEnabled' ,'DataPrivacy'])->name('map');
 
 
 
 
 
 // Profile Routes
- Route::get('/profile', [ProfileController::class, 'index'])->middleware(['auth', 'verified' ,  'isUserEnabled' ,'dataprivacy'])->name('profile');
+ Route::get('/profile', [ProfileController::class, 'index'])->middleware(['auth', 'verified' ,  'isUserEnabled' ,'DataPrivacy'])->name('profile');
 
- Route::post('/update/profile', [ProfileController::class, 'update'])->middleware(['auth','verified' , 'isUserEnabled' ,'dataprivacy'])->name('update');
+ Route::post('/update/profile', [ProfileController::class, 'update'])->middleware(['auth','verified' , 'isUserEnabled' ,'DataPrivacy'])->name('update');
 
- Route::post('/add_tracing_log', [ProfileController::class, 'addTracingLog'])->middleware(['auth','verified' ,  'isUserEnabled' , 'dataprivacy'])->name('add_tracing_log');
+ Route::post('/add_tracing_log', [ProfileController::class, 'addTracingLog'])->middleware(['auth','verified' ,  'isUserEnabled' , 'DataPrivacy'])->name('add_tracing_log');
 
- Route::post('/add_medical_assesment', [ProfileController::class, 'addMedicalAssesment'])->middleware(['auth','verified' ,  'isUserEnabled' ,'dataprivacy'])->name('add_medical_assesment');
+ Route::post('/add_medical_assesment', [ProfileController::class, 'addMedicalAssesment'])->middleware(['auth','verified' ,  'isUserEnabled' ,'DataPrivacy'])->name('add_medical_assesment');
 
 
 
  // Users route 
 
- Route::get('/users', [UserController::class, 'users'])->middleware(['auth', 'verified' , 'dataprivacy'])->name('users');
+ Route::get('/users', [UserController::class, 'users'])->middleware(['auth', 'verified' , 'DataPrivacy'])->name('users');
 
- Route::get('/create_user', [UserController::class, 'create_user'])->middleware(['auth', 'verified' ,  'isUserEnabled' , 'dataprivacy'])->name('create_user');
+ Route::get('/create_user', [UserController::class, 'create_user'])->middleware(['auth', 'verified' ,  'isUserEnabled' , 'DataPrivacy'])->name('create_user');
 
- Route::post('/store_user', [UserController::class, 'store_user'])->middleware(['auth', 'verified' ,  'isUserEnabled' ,'dataprivacy'])->name('store_user');
+ Route::post('/store_user', [UserController::class, 'store_user'])->middleware(['auth', 'verified' ,  'isUserEnabled' ,'DataPrivacy'])->name('store_user');
 
- Route::post('/disable_user/{id}', [UserController::class, 'disable_user'])->middleware(['auth', 'verified' ,'dataprivacy'])->name('disable_user');
+ Route::post('/disable_user/{id}', [UserController::class, 'disable_user'])->middleware(['auth', 'verified' ,'DataPrivacy'])->name('disable_user');
 
- Route::post('/enable_user/{id}', [UserController::class, 'enable_user'])->middleware(['auth', 'verified' ,'dataprivacy'])->name('enable_user');
+ Route::post('/enable_user/{id}', [UserController::class, 'enable_user'])->middleware(['auth', 'verified' ,'DataPrivacy'])->name('enable_user');
 
 
  
  // Health Check routes 
  
- Route::get('health_check', [DailyHealthCheckController::class, 'index'])->middleware(['auth', 'verified', 'isUserEnabled' ,'dataprivacy'])->name('health_check');
+ Route::get('health_check', [DailyHealthCheckController::class, 'index'])->middleware(['auth', 'verified', 'isUserEnabled' ,'DataPrivacy'])->name('health_check');
 
- Route::post('check_health_form', [DailyHealthCheckController::class, 'checkHealthForm'])->middleware(['auth', 'verified', 'isUserEnabled' , 'dataprivacy'])->name('check_health');
+ Route::post('check_health_form', [DailyHealthCheckController::class, 'checkHealthForm'])->middleware(['auth', 'verified', 'isUserEnabled' , 'DataPrivacy'])->name('check_health');
 
- Route::get('health_status', [DailyHealthCheckController::class, 'healthStatus'])->middleware(['auth', 'verified', 'isUserEnabled' , 'dataprivacy'])->name('healthStatus');
+ Route::get('health_status', [DailyHealthCheckController::class, 'healthStatus'])->middleware(['auth', 'verified', 'isUserEnabled' , 'DataPrivacy'])->name('healthStatus');
 
  Route::post('update_data_privacy', [DashboardController::class, 'update_data_privacy'])->middleware(['auth', 'verified', 'isUserEnabled'])->name('update_data_privacy');
 
@@ -85,12 +85,12 @@ Route::get('/map', [MapController::class, 'index'])->middleware(['auth', 'verifi
 
 // Student Routes 
 
-Route::get('/student/{id} ', [StudentController::class, 'show'])->middleware(['auth', 'verified', 'isUserEnabled' , 'dataprivacy'])->name('student');
+Route::get('/student/{id} ', [StudentController::class, 'show'])->middleware(['auth', 'verified', 'isUserEnabled' , 'DataPrivacy'])->name('student');
 
-Route::get('/student_reports', [StudentController::class, 'studentReports'])->middleware(['auth', 'verified' , 'isUserEnabled' ,'dataprivacy'])->name('student_reports');
+Route::get('/student_reports', [StudentController::class, 'studentReports'])->middleware(['auth', 'verified' , 'isUserEnabled' ,'DataPrivacy'])->name('student_reports');
 
-Route::get('change_student_status', [StudentController::class, 'changeStudentStatus'])->middleware(['auth', 'verified' , 'isUserEnabled' , 'dataprivacy'])->name('change_student_status');
+Route::get('change_student_status', [StudentController::class, 'changeStudentStatus'])->middleware(['auth', 'verified' , 'isUserEnabled' , 'DataPrivacy'])->name('change_student_status');
 
-Route::get('contingecy_report/{id}', [StudentController::class, 'contingencyReport'])->middleware(['auth', 'verified' , 'isUserEnabled' ,'dataprivacy'])->name('contingency_report');
+Route::get('contingecy_report/{id}', [StudentController::class, 'contingencyReport'])->middleware(['auth', 'verified' , 'isUserEnabled' ,'DataPrivacy'])->name('contingency_report');
 
 require __DIR__.'/auth.php';
