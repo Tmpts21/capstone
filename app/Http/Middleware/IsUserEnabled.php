@@ -20,9 +20,7 @@ class IsUserEnabled
     {
 
         if (Auth::user() &&  Auth::user()->account_status == 1) {
-            if (Auth::user()->data_privacy == 0) {
-                return Inertia::render('DataPrivacy');
-            }
+
             return $next($request); 
         }
 
