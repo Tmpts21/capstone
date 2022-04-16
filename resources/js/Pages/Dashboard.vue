@@ -35,7 +35,10 @@ export default {
 
     <Head title="Dashboard" />
 
+
     <BreezeAuthenticatedLayout>
+        {{$page.props.auth.user.data_privacy}}asdasd
+
         <template #header>
             <h1 class="font-semibold text-3xl text-gray-800 leading-tight">
                         St.Paul Covid Bulletin 
@@ -43,6 +46,8 @@ export default {
 
             
         </template>
+
+
 
 
 
