@@ -9,6 +9,7 @@ use App\Http\Controllers\MapController;
 use App\Http\Controllers\DailyHealthCheckController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\StudentController;
+use App\Http\Middleware\TermsAndCondition;
 
 
 
@@ -35,7 +36,7 @@ Route::get('/', function () {
 });
 
 
-Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified' , 'terms'])->name('dashboard');
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified' , 'isUserEnabled'])->name('dashboard');
 
 
 
@@ -78,7 +79,7 @@ Route::get('/map', [MapController::class, 'index'])->middleware(['auth', 'verifi
 
  Route::get('health_status', [DailyHealthCheckController::class, 'healthStatus'])->middleware(['auth', 'verified', 'isUserEnabled' , 'terms'])->name('healthStatus');
 
- Route::post('update_data_privacy', [DashboardController::class, 'update_data_privacy'])->middleware(['auth', 'verified', 'isUserEnabled'])->name('update_data_privacy');
+ Route::post('update_data_privacy', [DashboardController::class, 'update_data_privacy'])->middleware(['auth', 'verified'])->name('update_data_privacy');
 
  
  
