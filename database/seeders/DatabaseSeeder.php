@@ -56,7 +56,7 @@ class DatabaseSeeder extends Seeder
           ]);
 
         // create 100 users
-        User::factory(100)->create();
+        User::factory(5)->create();
         
        
     }
