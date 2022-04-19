@@ -60,7 +60,7 @@ export default {
                     <img  :src="url" alt="" title="" />
                     <br>
                       <a href="https://doh.gov.ph/covid19tracker" target="_blank" class="mt-5 mb-5 text-white bg-[#4285F4] hover:bg-[#4285F4]/90 focus:ring-4 focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-7 py-4 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 mr-2 mb-2">
-                            <i class="float-left mr-2 fa-solid fa-hospital-user"></i>  View Covid-19 Tracker 
+                            <i class="float-left mr-2 fa-solid fa-hospital-user"></i>  View COVID-19 Tracker 
                     </a>
                 </div>
 

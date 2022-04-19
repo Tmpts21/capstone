@@ -89,7 +89,7 @@
        
 
               <div>
-                <label class='mt-2'>2. Have you had face-to-face contact with a probable or confirmed COVID-19 case within 1 meter and for more than 15 minutes for the past 14 days? <i>(May nakasalamuha ka ba na maaaring o kumpirmadong pasyente na may COV/D-19 mu/a sa isang metrong 
+                <label class='mt-2'>2. Have you had face-to-face contact with a probable or confirmed COVID-19 case within 1 meter and for more than 15 minutes for the past 14 days? <i>(May nakasalamuha ka ba na maaaring o kumpirmadong pasyente na may COVID-19 mula sa isang metrong 
                   distansya or mas malapit pa at tumagal ng mahigit 15 minuto sa nakalipas na 14 araw?) </i></label>
                 <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"  v-model="form.one" required autofocus autocomplete="gender">
                     <option>yes </option>
@@ -98,7 +98,7 @@
             </div>
 
                 <div>
-                <label class='mt-2'>3. Have you provided direct care for a patient with probable or confirmed COVI-19 case without using proper "Personal Protective Equipment (PPE)" for the past 14 days? <i>(Nagalaga ka ba ng maaring o kumpirmadong pasyente na may COV/D-19 ng 
+                <label class='mt-2'>3. Have you provided direct care for a patient with probable or confirmed COVID-19 case without using proper "Personal Protective Equipment (PPE)" for the past 14 days? <i>(Nagalaga ka ba ng maaring o kumpirmadong pasyente na may COVID-19 ng 
                   hindi nakasuot ng tamang PPE (Personal Protective Equipment) sa nakalipas na 14 araw?)</i></label>
                 <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"  v-model="form.two" required autofocus autocomplete="gender">
                     <option>yes </option>
