@@ -40,7 +40,7 @@ export default {
 
         <template #header>
             <h1 class="font-semibold text-3xl text-gray-800 leading-tight">
-                        St.Paul Covid Bulletin 
+                        St.Paul COVID-19 Bulletin 
             </h1>
 
             
